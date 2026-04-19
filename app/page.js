@@ -14,8 +14,15 @@ export default function ExpeditionPage() {
       
       {/* --- STICKY NAVIGATION --- */}
       <nav className="fixed top-0 w-full z-50 glass border-b border-black/5 px-6 py-4 flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-[#C5A059] rounded-full flex items-center justify-center text-white font-serif font-bold text-xl">C</div>
+        <div className="flex items-center gap-3">
+          <div className="relative w-10 h-10 bg-[#1A1A1A] rounded-full flex items-center justify-center overflow-hidden">
+            <Image 
+              src="/favicon.svg" 
+              alt="CKE Logo" 
+              fill 
+              className="p-1.5"
+            />
+          </div>
           <span className="font-serif font-bold tracking-tight text-lg hidden md:block">Chinggis Khaan Expeditions</span>
         </div>
         <div className="flex gap-8 items-center">
