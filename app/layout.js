@@ -7,8 +7,29 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' });
 
 export const metadata = {
-  title: 'The Genesis Route: Birthplace of Genghis Khan | Chinggis Khaan Expeditions',
-  description: 'A premium 6-day historical tour to the birthplace of Genghis Khan in Mongolia.',
+  title: 'Chinggis Khaan Expeditions | Birthplace of the Great Khan',
+  description: 'Premium historical tours to the sacred birthplace of Genghis Khan in Khentii, Mongolia. Authentic nomadic experiences and expert historical guidance.',
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
+  openGraph: {
+    title: 'Chinggis Khaan Expeditions',
+    description: 'Explore the sacred lands of Genghis Khan with local experts.',
+    url: 'https://chinggiskhaanexpeditions.com',
+    siteName: 'Chinggis Khaan Expeditions',
+    images: [
+      {
+        url: '/images/hero_bg.png',
+        width: 1200,
+        height: 630,
+        alt: 'Chinggis Khaan Expeditions',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({ children }) {
