@@ -24,12 +24,26 @@ export const khentiiExpedition = {
     }
   },
 
-  // Scheduled Group Departures
+  // Scheduled Group Departures (Weekly 2026)
   scheduledGroups: [
-    { id: 1, dates: "July 12 - July 17, 2026", status: "Available", spots: 4 },
-    { id: 2, dates: "August 08 - August 13, 2026", status: "Available", spots: 2 },
-    { id: 3, dates: "September 05 - September 10, 2026", status: "Limited", spots: 1 },
-    { id: 4, dates: "October 02 - October 07, 2026", status: "Closed", spots: 0 }
+    { id: 1, dates: "May 01 - May 06, 2026", status: "Available", spots: 6 },
+    { id: 2, dates: "May 08 - May 13, 2026", status: "Available", spots: 6 },
+    { id: 3, dates: "May 15 - May 20, 2026", status: "Available", spots: 6 },
+    { id: 4, dates: "May 22 - May 27, 2026", status: "Available", spots: 6 },
+    { id: 5, dates: "May 29 - June 03, 2026", status: "Available", spots: 6 },
+    { id: 6, dates: "June 05 - June 10, 2026", status: "Available", spots: 6 },
+    { id: 7, dates: "June 12 - June 17, 2026", status: "Available", spots: 4 },
+    { id: 8, dates: "June 19 - June 24, 2026", status: "Available", spots: 6 },
+    { id: 9, dates: "June 26 - July 01, 2026", status: "Available", spots: 6 },
+    { id: 10, dates: "July 03 - July 08, 2026", status: "Available", spots: 6 },
+    { id: 11, dates: "July 10 - July 15, 2026", status: "Available", spots: 2 },
+    { id: 12, dates: "July 17 - July 22, 2026", status: "Available", spots: 6 },
+    { id: 13, dates: "July 24 - July 29, 2026", status: "Available", spots: 5 },
+    { id: 14, dates: "July 31 - August 05, 2026", status: "Available", spots: 6 },
+    { id: 15, dates: "August 07 - August 12, 2026", status: "Available", spots: 6 },
+    { id: 16, dates: "August 14 - August 19, 2026", status: "Available", spots: 4 },
+    { id: 17, dates: "August 21 - August 26, 2026", status: "Available", spots: 6 },
+    { id: 18, dates: "August 28 - September 02, 2026", status: "Available", spots: 6 }
   ],
 
   inclusions: [
