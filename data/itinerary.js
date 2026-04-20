@@ -7,7 +7,7 @@ export const khentiiExpedition = {
   priceDescription: "Premium historical adventure.",
   focus: "History, Steppe Culture, and the Legacy of the Great Khan",
   difficulty: "Easy / Moderate",
-  maxGroupSize: "8 Travelers",
+  maxGroupSize: "6 Travelers",
   accommodations: "Premium Ger Camps & Boutique Hotels",
   bestTime: "June - September",
   heroImage: "/images/hero_bg.png",
@@ -15,11 +15,11 @@ export const khentiiExpedition = {
   // Pricing Metadata
   pricing: {
     private: {
-      price: 3250,
+      price: 2000,
       description: "Fully customizable itinerary. Private vehicle and guide. Choose any dates."
     },
     group: {
-      price: 2150,
+      price: 1000,
       description: "Small group experience (max 6). Fixed itinerary. Shared vehicle (max 3 per car)."
     }
   },
