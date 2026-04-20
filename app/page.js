@@ -28,7 +28,7 @@ export default function ExpeditionPage() {
         <div className="flex gap-8 items-center">
           <a href="#itinerary" className="text-sm font-medium hover:text-[#C5A059] transition-colors uppercase tracking-widest">The Journey</a>
           <a href="#pricing" className="text-sm font-medium hover:text-[#C5A059] transition-colors uppercase tracking-widest">Pricing</a>
-          <a href="mailto:bzrgurosa@gmail.com" className="bg-[#1A1A1A] text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-[#C5A059] transition-all shadow-lg hover:shadow-xl active:scale-95">
+          <a href="mailto:chinggiskhaanexpeditions@gmail.com" className="bg-[#1A1A1A] text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-[#C5A059] transition-all shadow-lg hover:shadow-xl active:scale-95">
             Inquire Now
           </a>
         </div>
@@ -242,7 +242,7 @@ export default function ExpeditionPage() {
                 <div>
                   <h4 className="font-bold text-white/40 mb-4 tracking-widest text-sm uppercase">Quick Contact</h4>
                   <p className="text-sm text-white/60">
-                    Email: bzrgurosa@gmail.com<br/>
+                    Email: chinggiskhaanexpeditions@gmail.com<br/>
                     WhatsApp: +976 94476637
                   </p>
                 </div>
