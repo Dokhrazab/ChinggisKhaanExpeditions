@@ -8,6 +8,44 @@ import { khentiiExpedition } from '../data/itinerary';
 export default function ExpeditionPage() {
   const [tourType, setTourType] = useState('private'); // 'private' or 'group'
   const [selectedDate, setSelectedDate] = useState('');
+  
+  // Form State
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [status, setStatus] = useState('idle'); // 'idle' | 'loading' | 'success' | 'error'
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('loading');
+
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName,
+          email,
+          tourType,
+          selectedDate,
+          message,
+        }),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFullName('');
+        setEmail('');
+        setMessage('');
+        setSelectedDate('');
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setStatus('error');
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#F8F5F0] text-[#1A1A1A] font-sans selection:bg-[#C5A059] selection:text-white">
@@ -251,15 +289,27 @@ export default function ExpeditionPage() {
 
             <div className="bg-white p-12 rounded-3xl text-[#1A1A1A] shadow-2xl">
               <h3 className="text-2xl font-serif font-bold mb-6">Request a Proposal</h3>
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-2 gap-6">
                   <div>
                     <label className="text-[10px] uppercase font-bold tracking-widest text-[#666] mb-2 block">Full Name</label>
-                    <input type="text" className="w-full border-b border-[#E5E5E5] pb-2 focus:border-[#C5A059] outline-none" />
+                    <input 
+                      type="text" 
+                      required
+                      value={fullName}
+                      onChange={(e) => setFullName(e.target.value)}
+                      className="w-full border-b border-[#E5E5E5] pb-2 focus:border-[#C5A059] outline-none" 
+                    />
                   </div>
                   <div>
                     <label className="text-[10px] uppercase font-bold tracking-widest text-[#666] mb-2 block">Email Address</label>
-                    <input type="email" className="w-full border-b border-[#E5E5E5] pb-2 focus:border-[#C5A059] outline-none" />
+                    <input 
+                      type="email" 
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full border-b border-[#E5E5E5] pb-2 focus:border-[#C5A059] outline-none" 
+                    />
                   </div>
                 </div>
                 <div>
@@ -290,11 +340,29 @@ export default function ExpeditionPage() {
                 )}
                 <div>
                   <label className="text-[10px] uppercase font-bold tracking-widest text-[#666] mb-2 block">Message</label>
-                  <textarea rows="2" className="w-full border-b border-[#E5E5E5] pb-2 focus:border-[#C5A059] outline-none resize-none"></textarea>
+                  <textarea 
+                    rows="2" 
+                    required
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className="w-full border-b border-[#E5E5E5] pb-2 focus:border-[#C5A059] outline-none resize-none"
+                  ></textarea>
                 </div>
-                <button className="w-full bg-[#1A1A1A] text-white py-4 rounded-xl font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#C5A059] transition-all shadow-xl">
-                  Send Inquiry
+                
+                <button 
+                  type="submit"
+                  disabled={status === 'loading'}
+                  className="w-full bg-[#1A1A1A] text-white py-4 rounded-xl font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#C5A059] transition-all shadow-xl disabled:opacity-50"
+                >
+                  {status === 'loading' ? 'Sending...' : 'Send Inquiry'}
                 </button>
+
+                {status === 'success' && (
+                  <p className="text-green-600 text-xs font-bold text-center mt-4">Inquiry sent successfully! We will contact you soon.</p>
+                )}
+                {status === 'error' && (
+                  <p className="text-red-600 text-xs font-bold text-center mt-4">Failed to send inquiry. Please try again or email us directly.</p>
+                )}
               </form>
             </div>
           </div>
