@@ -15,7 +15,7 @@ export async function POST(request) {
     const { fullName, email, tourType, selectedDate, message } = await request.json();
 
     const data = await resend.emails.send({
-      from: 'Chinggis Khaan Expeditions <onboarding@resend.dev>',
+      from: 'Expedition Inquiry <inquiry@chinggiskhaanexpeditions.com>',
       to: ['chinggiskhanexpeditions@gmail.com'],
       subject: `New Expedition Inquiry from ${fullName}`,
       html: `

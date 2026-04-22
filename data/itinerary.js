@@ -10,7 +10,7 @@ export const khentiiExpedition = {
   maxGroupSize: "6 Travelers",
   accommodations: "Premium Ger Camps & Boutique Hotels",
   bestTime: "June - September",
-  heroImage: "/images/hero_bg.png",
+  heroImage: "/images/khentii-expedition-camp-view.png",
   
   // Pricing Metadata
   pricing: {
@@ -69,9 +69,9 @@ export const khentiiExpedition = {
       driveTime: "4-5 hours",
       activity: "Monument visit & Lake-side walk",
       images: [
-        "/images/image_6.png", // Tsonjin Boldog
-        "/images/image_5.png", // Khukh Nuur Lake
-        "/images/image_15.png" // Local authentic view
+        "/images/tsonjin-boldog-genghis-khan-statue.png",
+        "/images/khar-zurkhnii-khukh-nuur-lake.png",
+        "/images/khentii-mountain-scenery.png"
       ]
     },
     {
@@ -82,9 +82,9 @@ export const khentiiExpedition = {
       driveTime: "3-4 hours",
       activity: "Nomadic culture immersion",
       images: [
-        "/images/image_0.png", // Horsemen
-        "/images/image_1.png", // Monument
-        "/images/image_16.png" // Local authentic view
+        "/images/mongolian-horsemen-festival.png",
+        "/images/huhuuriin-taliin-boorchiin-monument.png",
+        "/images/horse-culture-demonstration-mongolia.png"
       ]
     },
     {
@@ -95,9 +95,9 @@ export const khentiiExpedition = {
       driveTime: "4-5 hours",
       activity: "Historical Pilgrimage",
       images: [
-        "/images/image_7.png",
-        "/images/image_8.png",
-        "/images/image_17.png" // Local authentic view
+        "/images/nomadic-life-mongolia-steppe.png",
+        "/images/traditional-mongolian-mare-milk.png",
+        "/images/nomad-family-hospitality.png"
       ]
     },
     {
@@ -108,9 +108,9 @@ export const khentiiExpedition = {
       driveTime: "3-4 hours",
       activity: "Ancient ruins discovery",
       images: [
-        "/images/image_9.png",
-        "/images/image_10.png",
-        "/images/image_18.png" // Local authentic view
+        "/images/mongolian-ger-camp-khentii.png",
+        "/images/sheep-herding-mongolia.png",
+        "/images/undurkhaan-mining-museum-history.png"
       ]
     },
     {
@@ -121,9 +121,9 @@ export const khentiiExpedition = {
       driveTime: "4-5 hours",
       activity: "River-side exploration",
       images: [
-        "/images/image_11.png",
-        "/images/image_12.png",
-        "/images/image_19.png" // Local authentic view
+        "/images/twin-ger-accommodation-mongolia.png",
+        "/images/mongolian-landscape-kherlen-river.png",
+        "/images/kherlen-khuduu-aral-sacred-site.png"
       ]
     },
     {
@@ -134,9 +134,9 @@ export const khentiiExpedition = {
       driveTime: "5-6 hours",
       activity: "Farewell dinner",
       images: [
-        "/images/image_13.png",
-        "/images/image_14.png",
-        "/images/image_20.png" // Local authentic view
+        "/images/traditional-mongolian-restaurant-view.png",
+        "/images/authentic-nomad-family-experience.png",
+        "/images/mongolian-steppe-landscape-view.png"
       ]
     }
   ]
