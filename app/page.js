@@ -151,6 +151,59 @@ export default function ExpeditionPage() {
         </div>
       </section>
 
+      {/* --- PROCEDURE 3: THE DEFINITIVE EXPEDITION MAP --- */}
+      <section className="py-24 px-6 bg-white overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-[#C5A059] font-bold tracking-[0.2em] uppercase text-sm mb-4 block">Geographical Authority</span>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#1A1A1A]">Mapping the Genesis Route</h2>
+          </div>
+
+          <div className="relative bg-[#F8F5F0] rounded-[40px] p-8 md:p-20 shadow-inner border border-black/5">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+              <div className="lg:col-span-2 relative">
+                <svg viewBox="0 0 800 400" className="w-full h-auto drop-shadow-2xl">
+                  <path 
+                    d="M100 300 Q 200 280 250 200 T 400 150 T 550 100 T 700 80" 
+                    fill="none" 
+                    stroke="#C5A059" 
+                    strokeWidth="4" 
+                    strokeDasharray="8 8"
+                  />
+                  {[
+                    { x: 100, y: 300, label: "Ulaanbaatar", desc: "Start" },
+                    { x: 250, y: 200, label: "Tsonjin Boldog", desc: "Statue" },
+                    { x: 400, y: 150, label: "Blue Lake", desc: "Sacred Site" },
+                    { x: 550, y: 100, label: "Kherlen River", desc: "Assembly" },
+                    { x: 700, y: 80, label: "Dadal Soum", desc: "Birthplace" }
+                  ].map((pt, i) => (
+                    <g key={i}>
+                      <circle cx={pt.x} cy={pt.y} r="6" fill="#1A1A1A" stroke="#C5A059" strokeWidth="2" />
+                      <text x={pt.x} y={pt.y - 15} textAnchor="middle" className="text-[12px] font-bold fill-[#1A1A1A] font-serif">{pt.label}</text>
+                    </g>
+                  ))}
+                </svg>
+              </div>
+              <div className="bg-white p-10 rounded-3xl shadow-xl border border-black/5">
+                <h4 className="font-serif font-bold text-2xl mb-6">Route Authority</h4>
+                <div className="space-y-6">
+                  {[
+                    { n: "01", t: "The Heartland", d: "Exclusively within the sacred 'Ikh Khorig' protection zone." },
+                    { n: "02", t: "Secret History", d: "Every stop is verified by ancient historical texts." },
+                    { n: "03", t: "Off-Grid Access", d: "Remote sites only accessible by our expert 4x4 drivers." }
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-4">
+                      <div className="text-[#C5A059] font-black text-xl">{item.n}</div>
+                      <p className="text-sm text-[#666]"><strong>{item.t}:</strong> {item.d}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* --- PRICING & DEPARTURES --- */}
       <section id="pricing" className="py-24 px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
