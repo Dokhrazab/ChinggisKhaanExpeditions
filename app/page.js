@@ -1,7 +1,7 @@
 // /app/page.js
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { expeditions, pricing_meta, scheduledGroups, dayImages } from '../data/itinerary';
@@ -11,9 +11,14 @@ export default function ExpeditionPage() {
   const [activeExpeditionId, setActiveExpeditionId] = useState('genesis-route');
   const [tourType, setTourType] = useState('private');
   const [selectedDate, setSelectedDate] = useState('');
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   
-  const currentExpedition = expeditions[lang].find(e => e.id === activeExpeditionId);
-  const meta = pricing_meta[lang];
+  const currentExpedition = expeditions[lang]?.find(e => e.id === activeExpeditionId) || expeditions['en'][0];
+  const meta = pricing_meta[lang] || pricing_meta['en'];
 
   // Form State
   const [fullName, setFullName] = useState('');
@@ -40,6 +45,8 @@ export default function ExpeditionPage() {
       setStatus('error');
     }
   };
+
+  if (!isClient) return <div className="min-h-screen bg-[#F8F5F0]" />;
 
   return (
     <div className="min-h-screen bg-[#F8F5F0] text-[#1A1A1A] font-sans selection:bg-[#C5A059] selection:text-white">
@@ -118,7 +125,7 @@ export default function ExpeditionPage() {
       <section className="py-24 px-6 bg-white border-b border-black/5">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 leading-tight text-[#1A1A1A]">
               Bringing <span className="text-[#C5A059]">Clarity</span> to the Legend.
             </h2>
             <p className="text-lg text-[#666] leading-relaxed mb-8">
@@ -168,7 +175,7 @@ export default function ExpeditionPage() {
       </section>
 
       {/* --- ITINERARY --- */}
-      <section id="itinerary" className="py-24 px-6 bg-white">
+      <section id="itinerary" className="py-24 px-6 bg-white text-[#1A1A1A]">
         <div className="max-w-6xl mx-auto">
           <div className="mb-20 text-center">
             <span className="text-[#C5A059] font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Route Overview</span>
@@ -203,9 +210,9 @@ export default function ExpeditionPage() {
       {/* --- INQUIRY --- */}
       <section id="inquiry" className="bg-[#1A1A1A] py-32 px-6 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#C5A059]/5 rounded-full blur-[120px] -mr-64 -mt-64" />
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 relative z-10">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 relative z-10 text-white">
           <div>
-            <h2 className="text-5xl font-serif font-bold mb-8 tracking-tighter text-white">Plan Your <span className="text-[#C5A059]">Legacy.</span></h2>
+            <h2 className="text-5xl font-serif font-bold mb-8 tracking-tighter">Plan Your <span className="text-[#C5A059]">Legacy.</span></h2>
             <p className="text-xl text-white/60 mb-12">{lang === 'en' ? `You are inquiring about: ${currentExpedition.title}` : `문의 중인 상품: ${currentExpedition.title}`}</p>
           </div>
           <div className="bg-white p-12 rounded-[40px] text-[#1A1A1A] shadow-2xl">
@@ -222,7 +229,7 @@ export default function ExpeditionPage() {
         </div>
       </section>
 
-      <footer className="bg-[#0A0A0A] py-12 px-6 border-t border-white/5 text-center">
+      <footer className="bg-[#0A0A0A] py-12 px-6 border-t border-white/5 text-center text-white">
         <p className="text-white/30 text-[10px] uppercase tracking-[0.2em]">© 2026 CKE Expedition Group. Bringing Clarity to the Great Khan.</p>
       </footer>
     </div>

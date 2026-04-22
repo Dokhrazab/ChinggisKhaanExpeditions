@@ -30,7 +30,7 @@ export const expeditions = {
       difficulty: "Easy",
       maxGroupSize: "10 Travelers",
       days: [
-        { day: 1, title: "The Colossus & Legend", description: "A 54km drive to the spot where Temuujin found the golden whip. Experience the world's tallest equestrian statue and the 'Empire of the Great Khans' museum in its base. Gain clarity on the spiritual significance of the whip in nomadic culture." }
+        { day: 1, title: "The Colossus & Legend", description: "A 54km drive to the spot where Temuujin found the golden whip. Experience the world's tallest equestrian statue." }
       ]
     },
     {
@@ -43,7 +43,7 @@ export const expeditions = {
       difficulty: "Easy",
       maxGroupSize: "12 Travelers",
       days: [
-        { day: 1, title: "9 Floors of History", description: "Guided tour through the largest history museum in Asia. View 13th-century artifacts, original armor, and the Gerege. We provide historical clarity by connecting museum artifacts to the real locations in Khentii." }
+        { day: 1, title: "9 Floors of History", description: "Guided tour through the largest history museum in Asia. View 13th-century artifacts and original armor." }
       ]
     }
   ],
@@ -76,7 +76,7 @@ export const expeditions = {
       difficulty: "쉬움",
       maxGroupSize: "10명",
       days: [
-        { day: 1, title: "거상과 전설", description: "테무진이 황금 채찍을 발견한 54km 지점으로 이동합니다. 세계 최대의 기마상과 지하 박물관을 관람하며 유목 문화에서 채찍이 갖는 영적 의미를 이해합니다." }
+        { day: 1, title: "거상과 전설", description: "테무진이 황금 채찍을 발견한 54km 지점으로 이동합니다. 세계 최대의 기마상과 지하 박물관을 관람합니다." }
       ]
     },
     {
@@ -89,49 +89,51 @@ export const expeditions = {
       difficulty: "쉬움",
       maxGroupSize: "12명",
       days: [
-        { day: 1, title: "역사의 9개 층", description: "아시아 최대 규모의 역사 박물관 가이드 투어입니다. 13세기 유물과 원형 갑옷, 게레게를 관람하며 헨티의 실제 장소와 유물 사이의 역사적 연결 고리를 명확히 설명해 드립니다." }
+        { day: 1, title: "역사의 9개 층", description: "아시아 최대 규모의 역사 박물관 가이드 투어입니다. 13세기 유물과 원형 갑옷을 관람합니다." }
       ]
     }
+  ]
+};
+
+export const scheduledGroups = [
+  { id: 1, dates: "May 01 - May 06, 2026", status: "Available", spots: 6 },
+  { id: 2, dates: "May 08 - May 13, 2026", status: "Available", spots: 6 },
+  { id: 3, dates: "May 15 - May 20, 2026", status: "Available", spots: 6 },
+  { id: 4, dates: "May 22 - May 27, 2026", status: "Available", spots: 6 },
+  { id: 5, dates: "May 29 - June 03, 2026", status: "Available", spots: 6 },
+  { id: 6, dates: "June 05 - June 10, 2026", status: "Available", spots: 6 }
+];
+
+export const dayImages = {
+  "genesis-route": [
+    ["/images/tsonjin-boldog-genghis-khan-statue.png", "/images/khar-zurkhnii-khukh-nuur-lake.png", "/images/khentii-mountain-scenery.png"],
+    ["/images/mongolian-horsemen-festival.png", "/images/huhuuriin-taliin-boorchiin-monument.png", "/images/horse-culture-demonstration-mongolia.png"],
+    ["/images/nomadic-life-mongolia-steppe.png", "/images/traditional-mongolian-mare-milk.png", "/images/nomad-family-hospitality.png"],
+    ["/images/mongolian-ger-camp-khentii.png", "/images/sheep-herding-mongolia.png", "/images/undurkhaan-mining-museum-history.png"],
+    ["/images/twin-ger-accommodation-mongolia.png", "/images/mongolian-landscape-kherlen-river.png", "/images/kherlen-khuduu-aral-sacred-site.png"],
+    ["/images/traditional-mongolian-restaurant-view.png", "/images/authentic-nomad-family-experience.png", "/images/mongolian-steppe-landscape-view.png"]
   ],
-  // Common Data
-  scheduledGroups: [
-    { id: 1, dates: "May 01 - May 06, 2026", status: "Available", spots: 6 },
-    { id: 2, dates: "May 08 - May 13, 2026", status: "Available", spots: 6 },
-    { id: 3, dates: "May 15 - May 20, 2026", status: "Available", spots: 6 },
-    { id: 4, dates: "May 22 - May 27, 2026", status: "Available", spots: 6 },
-    { id: 5, dates: "May 29 - June 03, 2026", status: "Available", spots: 6 },
-    { id: 6, dates: "June 05 - June 10, 2026", status: "Available", spots: 6 }
+  "golden-whip": [
+    ["/images/tsonjin-boldog-genghis-khan-statue.png", "/images/khentii-mountain-scenery.png", "/images/horse-culture-demonstration-mongolia.png"]
   ],
-  dayImages: {
-    "genesis-route": [
-      ["/images/tsonjin-boldog-genghis-khan-statue.png", "/images/khar-zurkhnii-khukh-nuur-lake.png", "/images/khentii-mountain-scenery.png"],
-      ["/images/mongolian-horsemen-festival.png", "/images/huhuuriin-taliin-boorchiin-monument.png", "/images/horse-culture-demonstration-mongolia.png"],
-      ["/images/nomadic-life-mongolia-steppe.png", "/images/traditional-mongolian-mare-milk.png", "/images/nomad-family-hospitality.png"],
-      ["/images/mongolian-ger-camp-khentii.png", "/images/sheep-herding-mongolia.png", "/images/undurkhaan-mining-museum-history.png"],
-      ["/images/twin-ger-accommodation-mongolia.png", "/images/mongolian-landscape-kherlen-river.png", "/images/kherlen-khuduu-aral-sacred-site.png"],
-      ["/images/traditional-mongolian-restaurant-view.png", "/images/authentic-nomad-family-experience.png", "/images/mongolian-steppe-landscape-view.png"]
-    ],
-    "golden-whip": [
-      ["/images/tsonjin-boldog-genghis-khan-statue.png", "/images/khentii-mountain-scenery.png", "/images/horse-culture-demonstration-mongolia.png"]
-    ],
-    "imperial-vault": [
-      ["/images/undurkhaan-mining-museum-history.png", "/images/huhuuriin-taliin-boorchiin-monument.png", "/images/mongolian-ger-camp-khentii.png"]
-    ]
+  "imperial-vault": [
+    ["/images/undurkhaan-mining-museum-history.png", "/images/huhuuriin-taliin-boorchiin-monument.png", "/images/mongolian-ger-camp-khentii.png"]
+  ]
+};
+
+export const pricing_meta = {
+  en: {
+    private: "Boutique Private",
+    group: "Fixed Departure",
+    pp: "per person",
+    private_desc: "Custom dates & dedicated 4x4.",
+    group_desc: "Shared small group experience."
   },
-  pricing_meta: {
-    en: {
-      private: "Boutique Private",
-      group: "Fixed Departure",
-      pp: "per person",
-      private_desc: "Custom dates & dedicated 4x4.",
-      group_desc: "Shared small group experience."
-    },
-    ko: {
-      private: "프리미엄 프라이빗",
-      group: "정기 출발",
-      pp: "1인당",
-      private_desc: "일정 맞춤 조율 및 전용 차량.",
-      group_desc: "소규모 그룹 공유 체험."
-    }
+  ko: {
+    private: "프리미엄 프라이빗",
+    group: "정기 출발",
+    pp: "1인당",
+    private_desc: "일정 맞춤 조율 및 전용 차량.",
+    group_desc: "소규모 그룹 공유 체험."
   }
 };
