@@ -10,8 +10,11 @@ export const metadata = {
   title: 'Chinggis Khaan Expeditions | Birthplace of the Great Khan',
   description: 'Premium historical tours to the sacred birthplace of Genghis Khan in Khentii, Mongolia.',
   icons: {
-    icon: '/logo-official.svg',
-    shortcut: '/logo-official.svg',
+    icon: [
+      { url: '/logo-official.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico' },
+    ],
+    shortcut: '/favicon.ico',
     apple: '/logo-official.svg',
   },
   openGraph: {
