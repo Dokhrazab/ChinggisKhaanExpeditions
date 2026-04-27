@@ -135,7 +135,7 @@ export default function ExpeditionPage() {
             </p>
           </div>
           <div className="relative h-[400px] rounded-[40px] overflow-hidden shadow-2xl">
-            <Image src="/images/300-horses-mongolia-steppe.png" alt="Horses" fill className="object-cover" />
+            <Image src="/images/chinggis-khaan-historical-clarity-authority.jpg" alt="Authentic historical clarity of the Mongol Empire" fill className="object-cover" />
           </div>
         </div>
       </section>
