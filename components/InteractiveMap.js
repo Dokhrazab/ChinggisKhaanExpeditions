@@ -1,27 +1,23 @@
 // /components/InteractiveMap.js
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { MapContainer, TileLayer, Polyline, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { tourData } from '../data/tours';
 
-// Fix for default marker icons in Leaflet + Next.js
-const icon = L.icon({
-  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41]
-});
-
 // Component to handle auto-zooming to route
 function RecenterMap({ coords }) {
   const map = useMap();
   useEffect(() => {
-    if (coords.length > 0) {
-      const bounds = L.latLngBounds(coords);
-      map.fitBounds(bounds, { padding: [50, 50] });
+    if (coords && coords.length > 0) {
+      try {
+        const bounds = L.latLngBounds(coords);
+        map.fitBounds(bounds, { padding: [50, 50] });
+      } catch (e) {
+        console.error("Map bounds error:", e);
+      }
     }
   }, [coords, map]);
   return null;
@@ -29,8 +25,25 @@ function RecenterMap({ coords }) {
 
 export default function InteractiveMap() {
   const [activeId, setActiveId] = useState(tourData[0].id);
+  const [mapIcon, setMapIcon] = useState(null);
+
+  useEffect(() => {
+    // Initialize Leaflet icon only on client side
+    const icon = L.icon({
+      iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41]
+    });
+    setMapIcon(icon);
+  }, []);
+
   const activeTour = tourData.find(t => t.id === activeId);
-  const polylineCoords = activeTour.waypoints.map(w => w.coords);
+  
+  // Memoize coordinates to prevent reference-based re-renders
+  const polylineCoords = useMemo(() => 
+    activeTour.waypoints.map(w => w.coords), 
+  [activeTour]);
 
   return (
     <div className="w-full space-y-6">
@@ -60,7 +73,6 @@ export default function InteractiveMap() {
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            className="map-tiles"
           />
           
           <Polyline 
@@ -68,8 +80,8 @@ export default function InteractiveMap() {
             pathOptions={{ color: activeTour.color, weight: 4, dashArray: '10, 10', opacity: 0.8 }} 
           />
 
-          {activeTour.waypoints.map((wp, idx) => (
-            <Marker key={idx} position={wp.coords} icon={icon}>
+          {mapIcon && activeTour.waypoints.map((wp, idx) => (
+            <Marker key={`${activeId}-${idx}`} position={wp.coords} icon={mapIcon}>
               <Popup className="font-serif">
                 <span className="font-bold">{wp.name}</span>
               </Popup>
@@ -80,7 +92,7 @@ export default function InteractiveMap() {
         </MapContainer>
         
         {/* Route Overlay Card */}
-        <div className="absolute bottom-8 right-8 z-[1000] bg-white p-6 rounded-3xl shadow-2xl border border-black/5 max-w-xs animate-fade-in">
+        <div className="absolute bottom-8 right-8 z-[1000] bg-white p-6 rounded-3xl shadow-2xl border border-black/5 max-w-xs animate-fade-in pointer-events-none">
           <span className="text-[#C5A059] font-black text-[10px] uppercase tracking-[0.2em] block mb-2">Live Route</span>
           <h4 className="font-serif font-bold text-xl mb-1">{activeTour.title}</h4>
           <p className="text-xs text-[#666] mb-4">{activeTour.tagline}</p>
