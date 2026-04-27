@@ -73,9 +73,8 @@ export default function InteractiveMap() {
 
           {activeTour.stops.map((stop, i) => {
             const customIcon = L.divIcon({
-              className: 'custom-marker',
-              // FIXED: Added absolute centering with flexbox and specific line-height
-              html: `<div style="background-color: ${activeTour.color}; width: 32px; height: 32px; border-radius: 50%; border: 4px solid white; display: flex; align-items: center; justify-center; color: white; font-size: 12px; font-weight: 900; box-shadow: 0 4px 15px rgba(0,0,0,0.4); line-height: 0;">${i + 1}</div>`,
+              className: 'custom-marker-container',
+              html: `<div class="custom-marker-circle" style="background-color: ${activeTour.color}; width: 32px; height: 32px; font-size: 12px;">${i + 1}</div>`,
               iconSize: [32, 32],
               iconAnchor: [16, 16]
             });
