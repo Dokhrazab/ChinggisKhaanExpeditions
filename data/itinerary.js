@@ -109,9 +109,9 @@ export const dayImages = {
     ["/images/tsonjin-boldog-genghis-khan-statue.png", "/images/khar-zurkhnii-khukh-nuur-lake.png", "/images/khentii-mountain-scenery.png"],
     ["/images/mongolian-horsemen-festival.png", "/images/huhuuriin-taliin-boorchiin-monument.png", "/images/horse-culture-demonstration-mongolia.png"],
     ["/images/khentii-province-historical-landscape.avif", "/images/traditional-nomadic-hospitality-khentii.avif", "/images/nomad-family-hospitality.png"],
-    ["/images/ancient-ruins-discovery-binder-soum.avif", "/images/sheep-herding-mongolia.png", "/images/undurkhaan-mining-museum-history.png"],
+    ["/images/ancient-ruins-discovery-binder-soum.avif", "/images/traditional-mongolian-crafts-display.avif", "/images/sacred-landscape-khentii-province.jpg"],
     ["/images/kherlen-khuduu-aral-assembly-grounds.avif", "/images/authentic-mongolian-ger-experience.avif", "/images/historical-monument-khentii-steppe.avif"],
-    ["/images/traditional-mongolian-restaurant-view.png", "/images/authentic-nomad-family-experience.png", "/images/mongolian-steppe-landscape-view.png"]
+    ["/images/ulaanbaatar-city-gateway-view.avif", "/images/nomadic-culture-farewell-experience.avif", "/images/final-journey-across-the-steppe.avif"]
   ],
   "golden-whip": [
     ["/images/tsonjin-boldog-genghis-khan-statue.png", "/images/khentii-mountain-scenery.png", "/images/horse-culture-demonstration-mongolia.png"]
