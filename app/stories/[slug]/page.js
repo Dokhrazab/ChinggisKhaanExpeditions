@@ -59,20 +59,21 @@ export default function BlogPost({ params }) {
       </nav>
 
       <div className="pt-32 pb-24 px-6">
-      <article className="max-w-3xl mx-auto">
-        <Link href="/stories" className="text-[#C5A059] font-bold text-xs uppercase tracking-widest mb-8 inline-block hover:translate-x-[-4px] transition-all">← Back to Chronicles</Link>
-        <header className="mb-12">
-          <span className="text-[10px] text-[#666] font-black uppercase tracking-[0.2em] mb-4 block">{post.date} | Historical Clarity</span>
-          <h1 className="text-4xl md:text-6xl font-serif font-extrabold text-[#1A1A1A] leading-[1.1] mb-8">{post.title}</h1>
-          <div className="relative h-[400px] md:h-[500px] rounded-[40px] overflow-hidden shadow-2xl border border-black/5">
-            <Image src={post.img} alt={post.title} fill className="object-cover" />
-          </div>
-        </header>
-        <div className="prose prose-lg prose-stone max-w-none text-[#1A1A1A] leading-relaxed prose-headings:font-serif prose-headings:font-bold prose-headings:text-[#1A1A1A] prose-p:text-[#444] prose-blockquote:border-l-[#C5A059] prose-blockquote:italic" dangerouslySetInnerHTML={{ __html: post.content }} />
-        <footer className="mt-20 pt-12 border-t border-black/5 text-center">
-          <Link href="/#inquiry" className="inline-block bg-[#1A1A1A] text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-[#C5A059] transition-all shadow-lg">Join the Next Expedition</Link>
-        </footer>
-      </article>
+        <article className="max-w-3xl mx-auto">
+          <Link href="/stories" className="text-[#C5A059] font-bold text-xs uppercase tracking-widest mb-8 inline-block hover:translate-x-[-4px] transition-all">← Back to Chronicles</Link>
+          <header className="mb-12">
+            <span className="text-[10px] text-[#666] font-black uppercase tracking-[0.2em] mb-4 block">{post.date} | Historical Clarity</span>
+            <h1 className="text-4xl md:text-6xl font-serif font-extrabold text-[#1A1A1A] leading-[1.1] mb-8">{post.title}</h1>
+            <div className="relative h-[400px] md:h-[500px] rounded-[40px] overflow-hidden shadow-2xl border border-black/5">
+              <Image src={post.img} alt={post.title} fill className="object-cover" />
+            </div>
+          </header>
+          <div className="prose prose-lg prose-stone max-w-none text-[#1A1A1A] leading-relaxed prose-headings:font-serif prose-headings:font-bold prose-headings:text-[#1A1A1A] prose-p:text-[#444] prose-blockquote:border-l-[#C5A059] prose-blockquote:italic" dangerouslySetInnerHTML={{ __html: post.content }} />
+          <footer className="mt-20 pt-12 border-t border-black/5 text-center">
+            <Link href="/#inquiry" className="inline-block bg-[#1A1A1A] text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-[#C5A059] transition-all shadow-lg">Join the Next Expedition</Link>
+          </footer>
+        </article>
+      </div>
     </div>
   );
 }
