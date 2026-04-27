@@ -26,8 +26,8 @@ export default function ExpeditionDetail() {
     <div className="min-h-screen bg-[#F8F5F0] text-[#1A1A1A] font-sans">
       <nav className="fixed top-0 w-full z-50 glass border-b border-black/5 px-6 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-3">
-          <div className="relative w-8 h-8 bg-[#1A1A1A] rounded-full flex items-center justify-center overflow-hidden">
-            <Image src="/favicon.svg" alt="CKE Logo" fill className="p-1" />
+          <div className="relative w-12 h-12 rounded-full flex items-center justify-center overflow-hidden">
+            <Image src="/logo-official.svg" alt="CKE Official Logo" fill className="p-1" />
           </div>
           <span className="font-serif font-bold text-sm">Chinggis Khaan Expeditions</span>
         </Link>

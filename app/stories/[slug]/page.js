@@ -45,7 +45,20 @@ export default function BlogPost({ params }) {
   if (!post) notFound();
 
   return (
-    <div className="min-h-screen bg-[#F8F5F0] pt-32 pb-24 px-6">
+    <div className="min-h-screen bg-[#F8F5F0] text-[#1A1A1A] font-sans">
+      
+      {/* --- STICKY NAVIGATION --- */}
+      <nav className="fixed top-0 w-full z-50 glass border-b border-black/5 px-6 py-4 flex justify-between items-center text-[#1A1A1A]">
+        <Link href="/" className="flex items-center gap-3">
+          <div className="relative w-12 h-12 rounded-full flex items-center justify-center overflow-hidden">
+            <Image src="/logo-official.svg" alt="CKE Official Logo" fill className="p-1" />
+          </div>
+          <span className="font-serif font-bold tracking-tight text-lg hidden md:block">Chinggis Khaan Expeditions</span>
+        </Link>
+        <Link href="/stories" className="text-[10px] font-black uppercase tracking-widest bg-[#1A1A1A] text-white px-6 py-2 rounded-full">Back to Stories</Link>
+      </nav>
+
+      <div className="pt-32 pb-24 px-6">
       <article className="max-w-3xl mx-auto">
         <Link href="/stories" className="text-[#C5A059] font-bold text-xs uppercase tracking-widest mb-8 inline-block hover:translate-x-[-4px] transition-all">← Back to Chronicles</Link>
         <header className="mb-12">

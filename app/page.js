@@ -13,8 +13,33 @@ const InteractiveMap = dynamic(() => import('../components/InteractiveMap'), {
 });
 
 export default function LandingPage() {
+  const [lang, setLang] = useState('en');
+
   return (
     <div className="min-h-screen bg-[#F8F5F0] text-[#1A1A1A] font-sans selection:bg-[#C5A059] selection:text-white">
+      
+      {/* --- STICKY NAVIGATION --- */}
+      <nav className="fixed top-0 w-full z-50 glass border-b border-black/5 px-6 py-4 flex justify-between items-center text-[#1A1A1A]">
+        <div className="flex items-center gap-3">
+          <div className="relative w-12 h-12 rounded-full flex items-center justify-center overflow-hidden">
+            <Image src="/logo-official.svg" alt="CKE Official Logo" fill className="p-1" />
+          </div>
+          <span className="font-serif font-bold tracking-tight text-lg hidden md:block">Chinggis Khaan Expeditions</span>
+        </div>
+        <div className="flex gap-8 items-center font-bold uppercase tracking-widest text-[10px]">
+          <Link href="/stories" className="hover:text-[#C5A059] transition-colors hidden sm:block">Stories</Link>
+          <a href="#tours" className="hover:text-[#C5A059] transition-colors hidden md:block">Journeys</a>
+          
+          <div className="flex items-center bg-black/5 rounded-full p-1 border border-black/5">
+            <button onClick={() => setLang('en')} className={`px-3 py-1 rounded-full text-[9px] font-black transition-all ${lang === 'en' ? 'bg-[#1A1A1A] text-white shadow-sm' : 'text-[#666]'}`}>EN</button>
+            <button onClick={() => setLang('ko')} className={`px-3 py-1 rounded-full text-[9px] font-black transition-all ${lang === 'ko' ? 'bg-[#1A1A1A] text-white shadow-sm' : 'text-[#666]'}`}>KO</button>
+          </div>
+
+          <a href="#inquiry" className="bg-[#1A1A1A] text-white px-6 py-2.5 rounded-full hover:bg-[#C5A059] transition-all shadow-lg active:scale-95">
+            {lang === 'en' ? 'Inquire' : '문의하기'}
+          </a>
+        </div>
+      </nav>
       
       {/* --- HERO SECTION --- */}
       <header className="relative w-full h-[85vh] flex items-center justify-center overflow-hidden">
