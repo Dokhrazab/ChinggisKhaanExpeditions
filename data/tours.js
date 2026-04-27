@@ -9,15 +9,13 @@ export const tourData = [
     tagline: "Expedition into the heart of Khentii.",
     color: "#C5A059",
     waypoints: [
-      { name: "Ulaanbaatar", coords: [47.9188, 106.9176] },
-      { name: "Tsonjinboldog", coords: [47.8079, 107.5303] },
-      { name: "Blue Lake", coords: [48.0645, 108.1889] },
-      { name: "Chinggis City", coords: [47.3197, 110.6558] },
-      { name: "Taliin Tumen Aduu", coords: [47.3, 111.0] },
-      { name: "Dadal Soum", coords: [49.0200, 111.6200] },
-      { name: "Binder Soum", coords: [48.5800, 110.6300] },
-      { name: "Kherlen Khuduu Aral", coords: [47.1667, 109.1167] },
-      { name: "Ulaanbaatar", coords: [47.9188, 106.9176] }
+      { name: "Ulaanbaatar", coords: [47.9188, 106.9176], day: 0, desc: "The modern gateway to the empire." },
+      { name: "Tsonjinboldog", coords: [47.8079, 107.5303], day: 1, desc: "Where the golden whip was found." },
+      { name: "Blue Lake", coords: [48.0645, 108.1889], day: 2, desc: "The site of Temuujin's enthronement." },
+      { name: "Chinggis City", coords: [47.3197, 110.6558], day: 3, desc: "Historical center of the East." },
+      { name: "Taliin Tumen Aduu", coords: [47.3, 111.0], day: 4, desc: "The festival of ten thousand horses." },
+      { name: "Dadal Soum", coords: [49.0200, 111.6200], day: 5, desc: "The sacred birthplace of the Great Khan." },
+      { name: "Binder Soum", coords: [48.5800, 110.6300], day: 6, desc: "Ancient ruins and sacred mountain ridges." }
     ]
   },
   {
@@ -28,9 +26,9 @@ export const tourData = [
     tagline: "The Legend of Tsonjinboldog.",
     color: "#8B4513",
     waypoints: [
-      { name: "Ulaanbaatar", coords: [47.9188, 106.9176] },
-      { name: "Tsonjinboldog", coords: [47.8079, 107.5303] },
-      { name: "Ulaanbaatar", coords: [47.9188, 106.9176] }
+      { name: "Ulaanbaatar", coords: [47.9188, 106.9176], day: 1, desc: "Departure from the capital." },
+      { name: "Tsonjinboldog", coords: [47.8079, 107.5303], day: 1, desc: "The 40m stainless steel colossus." },
+      { name: "Ulaanbaatar", coords: [47.9188, 106.9176], day: 1, desc: "Evening return." }
     ]
   },
   {
@@ -39,16 +37,34 @@ export const tourData = [
     duration: "1 Day",
     image: "/images/chinggis-khaan-historical-clarity-authority.jpg",
     tagline: "National Museum Deep-Dive.",
-    color: "#2F4F4F",
+    color: "#2D4F1E",
     waypoints: [
-      { name: "UB Center", coords: [47.9188, 106.9176] },
-      { name: "Chinggis Khaan Museum", coords: [47.9230, 106.9180] }
+      { name: "UB Center", coords: [47.9188, 106.9176], day: 1, desc: "Guided museum experience." },
+      { name: "Chinggis Khaan Museum", coords: [47.9230, 106.9180], day: 1, desc: "9 floors of imperial history." }
     ]
   }
 ];
 
 export const sampleBlogs = [
-  { slug: 'dadal-vs-ulaanbaatar', title: 'The Soul of Dadal', category: 'History', img: '/images/khentii-mountain-scenery.png' },
-  { slug: 'packing-for-the-steppe', title: 'Survival Guide', category: 'Travel', img: '/images/mongolian-ger-camp-khentii.png' },
-  { slug: 'sacred-rivers-guide', title: 'The Three Rivers', category: 'Geography', img: '/images/mongolian-landscape-kherlen-river.png' }
+  { 
+    slug: 'dadal-vs-ulaanbaatar', 
+    title: 'Dadal vs. Ulaanbaatar: The Search for the Real Mongolia', 
+    category: 'History', 
+    img: '/images/khentii-mountain-scenery.png',
+    size: 'large'
+  },
+  { 
+    slug: 'the-colossus-legend', 
+    title: 'The Legend of the Golden Whip', 
+    category: 'Culture', 
+    img: '/images/tsonjin-boldog-genghis-khan-statue.png',
+    size: 'small'
+  },
+  { 
+    slug: 'decoding-the-imperial-vault', 
+    title: 'Inside the 9 Floors of the Imperial Vault', 
+    category: 'Archaeology', 
+    img: '/images/undurkhaan-mining-museum-history.png',
+    size: 'small'
+  }
 ];
