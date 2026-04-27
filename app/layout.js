@@ -8,11 +8,11 @@ const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfa
 
 export const metadata = {
   title: 'Chinggis Khaan Expeditions | Birthplace of the Great Khan',
-  description: 'Premium historical tours to the sacred birthplace of Genghis Khan in Khentii, Mongolia. Authentic nomadic experiences and expert historical guidance.',
+  description: 'Premium historical tours to the sacred birthplace of Genghis Khan in Khentii, Mongolia.',
   icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
+    icon: '/logo-official.svg',
+    shortcut: '/logo-official.svg',
+    apple: '/logo-official.svg',
   },
   openGraph: {
     title: 'Chinggis Khaan Expeditions',
@@ -21,7 +21,7 @@ export const metadata = {
     siteName: 'Chinggis Khaan Expeditions',
     images: [
       {
-        url: '/images/hero_bg.png',
+        url: '/images/chinggis-khaan-expedition-signature-hero.avif',
         width: 1200,
         height: 630,
         alt: 'Chinggis Khaan Expeditions',
