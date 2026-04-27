@@ -108,10 +108,9 @@ export const dayImages = {
   "genesis-route": [
     ["/images/tsonjin-boldog-genghis-khan-statue.png", "/images/khar-zurkhnii-khukh-nuur-lake.png", "/images/khentii-mountain-scenery.png"],
     ["/images/mongolian-horsemen-festival.png", "/images/huhuuriin-taliin-boorchiin-monument.png", "/images/horse-culture-demonstration-mongolia.png"],
-    ["/images/nomadic-life-mongolia-steppe.png", "/images/traditional-mongolian-mare-milk.png", "/images/nomad-family-hospitality.png"],
-    ["/images/dadal-birthplace-historical-view.avif", "/images/nomadic-heritage-site-dadal.avif", "/images/nomad-family-hospitality.png"],
-    ["/images/mongolian-ger-camp-khentii.png", "/images/sheep-herding-mongolia.png", "/images/undurkhaan-mining-museum-history.png"],
-    ["/images/twin-ger-accommodation-mongolia.png", "/images/mongolian-landscape-kherlen-river.png", "/images/kherlen-khuduu-aral-sacred-site.png"],
+    ["/images/khentii-province-historical-landscape.avif", "/images/traditional-nomadic-hospitality-khentii.avif", "/images/nomad-family-hospitality.png"],
+    ["/images/ancient-ruins-discovery-binder-soum.avif", "/images/sheep-herding-mongolia.png", "/images/undurkhaan-mining-museum-history.png"],
+    ["/images/kherlen-khuduu-aral-assembly-grounds.avif", "/images/authentic-mongolian-ger-experience.avif", "/images/historical-monument-khentii-steppe.avif"],
     ["/images/traditional-mongolian-restaurant-view.png", "/images/authentic-nomad-family-experience.png", "/images/mongolian-steppe-landscape-view.png"]
   ],
   "golden-whip": [
