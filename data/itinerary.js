@@ -8,7 +8,7 @@ export const expeditions = {
       tagline: "6-Day Expedition into the heart of Khentii Province.",
       duration: "6 Days / 5 Nights",
       price: 1000,
-      heroImage: "/images/khentii-expedition-camp-view.png",
+      heroImage: "/images/chinggis-khaan-expedition-signature-hero.avif",
       difficulty: "Moderate",
       maxGroupSize: "6 Travelers",
       days: [
@@ -54,7 +54,7 @@ export const expeditions = {
       tagline: "몽골 헨티 지방의 심장부로 떠나는 6일간의 탐험.",
       duration: "6일 / 5박",
       price: 1000,
-      heroImage: "/images/khentii-expedition-camp-view.png",
+      heroImage: "/images/chinggis-khaan-expedition-signature-hero.avif",
       difficulty: "보통",
       maxGroupSize: "6명",
       days: [
@@ -109,9 +109,9 @@ export const dayImages = {
     ["/images/tsonjin-boldog-genghis-khan-statue.png", "/images/khar-zurkhnii-khukh-nuur-lake.png", "/images/khentii-mountain-scenery.png"],
     ["/images/mongolian-horsemen-festival.png", "/images/huhuuriin-taliin-boorchiin-monument.png", "/images/horse-culture-demonstration-mongolia.png"],
     ["/images/khentii-province-historical-landscape.avif", "/images/traditional-nomadic-hospitality-khentii.avif", "/images/nomad-family-hospitality.png"],
-    ["/images/ancient-ruins-discovery-binder-soum.avif", "/images/traditional-mongolian-crafts-display.avif", "/images/sacred-landscape-khentii-province.jpg"],
+    ["/images/ancient-ruins-discovery-binder-soum.avif", "/images/ancient-historical-relics-mongolia.avif", "/images/sacred-landscape-khentii-province.jpg"],
     ["/images/kherlen-khuduu-aral-assembly-grounds.avif", "/images/authentic-mongolian-ger-experience.avif", "/images/historical-monument-khentii-steppe.avif"],
-    ["/images/ulaanbaatar-city-gateway-view.avif", "/images/nomadic-culture-farewell-experience.avif", "/images/final-journey-across-the-steppe.avif"]
+    ["/images/traditional-culture-immersion-khentii.avif", "/images/mongolian-steppe-farewell-sunset.avif", "/images/final-journey-across-the-steppe.avif"]
   ],
   "golden-whip": [
     ["/images/tsonjin-boldog-genghis-khan-statue.png", "/images/khentii-mountain-scenery.png", "/images/horse-culture-demonstration-mongolia.png"]
