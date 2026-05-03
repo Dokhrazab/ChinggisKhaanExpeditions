@@ -5,7 +5,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { MapContainer, TileLayer, Polyline, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import { tourData } from '../data/tours';
+import { expeditions } from '../data/expeditions';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function RecenterMap({ coords }) {
@@ -20,6 +20,7 @@ function RecenterMap({ coords }) {
 }
 
 export default function InteractiveMap() {
+  const tourData = expeditions['en'];
   const [activeId, setActiveId] = useState(tourData[0].id);
   const [mounted, setIsMounted] = useState(false);
 
@@ -33,14 +34,8 @@ export default function InteractiveMap() {
     });
   }, []);
 
-  const tourCoords = {
-    "genesis-route": [[47.9188, 106.9176], [47.8079, 107.5303], [48.0645, 108.1889], [47.3197, 110.6558], [47.3, 111.0], [49.0200, 111.6200], [48.5800, 110.6300], [47.1667, 109.1167]],
-    "golden-whip": [[47.9188, 106.9176], [47.8079, 107.5303], [47.9188, 106.9176]],
-    "imperial-vault": [[47.9188, 106.9176], [47.9230, 106.9180]]
-  };
-
   const activeTour = tourData.find(t => t.id === activeId);
-  const currentGPSCoords = tourCoords[activeId];
+  const currentGPSCoords = useMemo(() => activeTour.waypoints.map(w => w.coords), [activeTour]);
 
   if (!mounted) return <div className="h-[650px] w-full bg-stone-100 animate-pulse rounded-[48px]" />;
 
@@ -71,7 +66,7 @@ export default function InteractiveMap() {
           
           <Polyline positions={currentGPSCoords} pathOptions={{ color: activeTour.color, weight: 4, dashArray: '10, 15', opacity: 0.8, lineCap: 'round' }} />
 
-          {activeTour.stops.map((stop, i) => {
+          {activeTour.waypoints.map((stop, i) => {
             const customIcon = L.divIcon({
               className: 'custom-marker-container',
               html: `<div class="custom-marker-circle" style="background-color: ${activeTour.color}; width: 32px; height: 32px; font-size: 12px;">${i + 1}</div>`,
@@ -80,7 +75,7 @@ export default function InteractiveMap() {
             });
 
             return (
-              <Marker key={`${activeId}-${i}`} position={currentGPSCoords[i] || currentGPSCoords[0]} icon={customIcon}>
+              <Marker key={`${activeId}-${i}`} position={stop.coords} icon={customIcon}>
                 <Popup className="cke-popup">
                   <div className="w-64 p-2 bg-white rounded-2xl text-center">
                     <span className="text-[#C5A059] font-black text-[9px] uppercase tracking-widest block mb-1">Stop {i + 1}</span>
