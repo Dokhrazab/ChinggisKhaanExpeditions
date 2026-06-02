@@ -1,95 +1,97 @@
 // /components/InteractiveMap.js
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
-import { MapContainer, TileLayer, Polyline, Marker, Popup, useMap } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
+import { useEffect, useState } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from 'react-leaflet';
 import L from 'leaflet';
-import { expeditions } from '../data/expeditions';
-import { motion, AnimatePresence } from 'framer-motion';
+import 'leaflet/dist/leaflet.css';
+import { expeditions } from '../data/itinerary';
 
-function RecenterMap({ coords }) {
+// Fix Leaflet icon issue in Next.js
+const icon = L.icon({
+  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+});
+
+function MapRecenter({ coords }) {
   const map = useMap();
   useEffect(() => {
-    if (coords && coords.length > 0) {
-      const bounds = L.latLngBounds(coords);
-      map.fitBounds(bounds, { padding: [50, 50], maxZoom: 10 });
-    }
+    map.setView(coords, 7);
   }, [coords, map]);
   return null;
 }
 
 export default function InteractiveMap() {
-  const tourData = expeditions['en'];
-  const [activeId, setActiveId] = useState(tourData[0].id);
-  const [mounted, setIsMounted] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+  const expedition = expeditions['en'][0]; // Rugged Mongolia 4x4
+  const points = expedition.waypoints.map(w => w.coords);
 
   useEffect(() => {
-    setIsMounted(true);
-    delete L.Icon.Default.prototype._getIconUrl;
-    L.Icon.Default.mergeOptions({
-      iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-      iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-    });
+    setIsClient(true);
   }, []);
 
-  const activeTour = tourData.find(t => t.id === activeId);
-  const currentGPSCoords = useMemo(() => activeTour.waypoints.map(w => w.coords), [activeTour]);
-
-  if (!mounted) return <div className="h-[650px] w-full bg-stone-100 animate-pulse rounded-[48px]" />;
+  if (!isClient) return <div className="h-[700px] w-full bg-stone-100 animate-pulse rounded-[48px]" />;
 
   return (
-    <div className="w-full space-y-12">
-      <div className="flex bg-[#F8F5F0] p-2 rounded-[24px] border border-black/5 w-fit mx-auto shadow-sm">
-        {tourData.map((tour) => (
-          <button
-            key={tour.id}
-            onClick={() => setActiveId(tour.id)}
-            className={`px-8 py-3 rounded-[18px] text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 ${
-              activeId === tour.id ? 'bg-[#1A1A1A] text-white shadow-xl' : 'text-[#666] hover:text-[#1A1A1A]'
-            }`}
-          >
-            {tour.title}
-          </button>
+    <div className="h-[700px] w-full relative group">
+      <MapContainer 
+        center={[48.5, 109.5]} 
+        zoom={7} 
+        scrollWheelZoom={false}
+        className="h-full w-full z-0"
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          className="grayscale contrast-125 opacity-80"
+        />
+        
+        <Polyline 
+          positions={points} 
+          color="#C5A059" 
+          weight={4} 
+          dashArray="10, 10"
+          opacity={0.8}
+        />
+
+        {expedition.waypoints.map((point, idx) => (
+          <Marker key={idx} position={point.coords} icon={icon}>
+            <Popup className="custom-popup">
+              <div className="p-2">
+                <h4 className="font-serif font-bold text-[#1A1A1A] mb-1">{point.name}</h4>
+                <p className="text-[10px] text-[#C5A059] font-black uppercase tracking-widest">{point.desc}</p>
+              </div>
+            </Popup>
+          </Marker>
         ))}
+        
+        <MapRecenter coords={[48.5, 109.5]} />
+      </MapContainer>
+
+      <div className="absolute top-10 left-10 z-10 bg-white/90 backdrop-blur-md p-8 rounded-[32px] border border-black/5 shadow-2xl max-w-xs pointer-events-none">
+        <span className="text-[#C5A059] font-black tracking-[0.4em] uppercase text-[9px] mb-4 block">Expedition Vector</span>
+        <h3 className="text-2xl font-serif font-bold mb-4 tracking-tighter">Northern Taiga Traverse</h3>
+        <p className="text-xs text-[#666] leading-relaxed font-light italic">"Navigating the sacred geography of the Great Khan via self-supported 4x4 maneuvers."</p>
       </div>
 
-      <div className="relative h-[650px] w-full rounded-[48px] overflow-hidden shadow-2xl border-[8px] border-white group">
-        <MapContainer 
-          center={[47.9188, 106.9176]} 
-          zoom={7} 
-          style={{ height: '100%', width: '100%', background: '#F8F5F0' }}
-          scrollWheelZoom={false}
-        >
-          <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png" attribution='&copy; OpenStreetMap' />
-          
-          <Polyline positions={currentGPSCoords} pathOptions={{ color: activeTour.color, weight: 4, dashArray: '10, 15', opacity: 0.8, lineCap: 'round' }} />
-
-          {activeTour.waypoints.map((stop, i) => {
-            const customIcon = L.divIcon({
-              className: 'custom-marker-container',
-              html: `<div class="custom-marker-circle" style="background-color: ${activeTour.color}; width: 32px; height: 32px; font-size: 12px;">${i + 1}</div>`,
-              iconSize: [32, 32],
-              iconAnchor: [16, 16]
-            });
-
-            return (
-              <Marker key={`${activeId}-${i}`} position={stop.coords} icon={customIcon}>
-                <Popup className="cke-popup">
-                  <div className="w-64 p-2 bg-white rounded-2xl text-center">
-                    <span className="text-[#C5A059] font-black text-[9px] uppercase tracking-widest block mb-1">Stop {i + 1}</span>
-                    <h4 className="font-serif font-bold text-lg mb-2 text-[#1A1A1A]">{stop.name}</h4>
-                    <p className="text-xs text-[#666] leading-relaxed mb-4">{stop.desc}</p>
-                    <a href="#inquiry" className="inline-block px-6 py-2.5 bg-[#1A1A1A] text-white rounded-xl text-[9px] font-black uppercase tracking-widest hover:bg-[#C5A059] transition-all">Book Now</a>
-                  </div>
-                </Popup>
-              </Marker>
-            );
-          })}
-          <RecenterMap coords={currentGPSCoords} />
-        </MapContainer>
-      </div>
+      <style jsx global>{`
+        .leaflet-container {
+          background: #f8f5f0 !important;
+          border-radius: 48px;
+        }
+        .custom-popup .leaflet-popup-content-wrapper {
+          background: rgba(255, 255, 255, 0.9);
+          backdrop-filter: blur(10px);
+          border-radius: 16px;
+          border: 1px solid rgba(0,0,0,0.05);
+          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .leaflet-popup-tip {
+          background: rgba(255, 255, 255, 0.9);
+        }
+      `}</style>
     </div>
   );
 }
