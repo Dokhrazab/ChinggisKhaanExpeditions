@@ -1,5 +1,5 @@
 // /app/sitemap.js
-import { tourData, sampleBlogs } from '../data/tours';
+import { expeditions, sampleBlogs } from '../data/tours';
 
 export default function sitemap() {
   const baseUrl = 'https://chinggiskhaanexpeditions.com';
@@ -12,8 +12,8 @@ export default function sitemap() {
     priority: 1,
   }));
 
-  // Expedition routes
-  const expeditionRoutes = tourData.map((tour) => ({
+  // Expedition routes - fixed to use expeditions.en
+  const expeditionRoutes = expeditions.en.map((tour) => ({
     url: `${baseUrl}/expeditions/${tour.id}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
