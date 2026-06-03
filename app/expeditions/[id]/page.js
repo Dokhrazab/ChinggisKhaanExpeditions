@@ -33,9 +33,14 @@ export default function ExpeditionDetail({ params }) {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "TouristTrip",
-    "name": expedition.title,
+    "name": `Rugged 4x4 ${expedition.title} Overland Expedition`,
     "description": expedition.description,
-    "touristType": "Overland Expedition",
+    "touristType": "Private Remote Wilderness Safari",
+    "provider": {
+      "@type": "TravelAgency",
+      "name": "Chinggis Khaan Expeditions",
+      "url": "https://chinggiskhaanexpeditions.com"
+    },
     "itinerary": expedition.days.map((day) => ({
       "@type": "City",
       "name": day.title,
@@ -45,8 +50,11 @@ export default function ExpeditionDetail({ params }) {
       "@type": "Offer",
       "priceCurrency": "USD",
       "price": expedition.price,
-      "availability": "https://schema.org/InStock"
-    }
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2026-01-01"
+    },
+    "touristType": "Deep-field Sub-Siberian Taiga Survival",
+    "transportation": "Russian UAZ Furgon (Military-Grade Mechanical Bukhanka)"
   };
 
   return (
@@ -61,7 +69,7 @@ export default function ExpeditionDetail({ params }) {
           <div className="relative w-10 h-10 rounded-full flex items-center justify-center overflow-hidden">
             <Image src="/logo-official.svg" alt="CKE Logo" fill className="p-1" />
           </div>
-          <span className="font-serif font-bold text-sm">Chinggis Khaan Expeditions</span>
+          <span className="font-serif font-bold text-sm uppercase">Chinggis Khaan Expeditions</span>
         </Link>
         <Link href="/" className="text-[10px] font-black uppercase tracking-widest bg-[#1A1A1A] text-white px-6 py-2 rounded-full hover:bg-[#C5A059] transition-all">Back to Home</Link>
       </nav>
@@ -71,7 +79,7 @@ export default function ExpeditionDetail({ params }) {
         <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] to-transparent opacity-80" />
         <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pb-20 text-white text-left">
           <span className="text-[#C5A059] font-bold tracking-[0.4em] uppercase mb-4 block text-xs">Rugged Overland Expedition</span>
-          <h1 className="text-5xl md:text-7xl font-serif font-extrabold mb-4 tracking-tighter">{expedition.title}</h1>
+          <h1 className="text-5xl md:text-7xl font-serif font-extrabold mb-4 tracking-tighter uppercase">{expedition.title}</h1>
           <p className="text-xl md:text-2xl text-white/80 max-w-2xl font-light italic">{expedition.tagline}</p>
         </div>
       </header>
@@ -100,7 +108,7 @@ export default function ExpeditionDetail({ params }) {
                   <span className="text-8xl font-serif font-black text-[#C5A059]/10">0{day.day}</span>
                   <div className="h-px flex-1 bg-[#C5A059]/20" />
                 </div>
-                <h3 className="text-4xl font-serif font-bold mb-6 tracking-tight">{day.title}</h3>
+                <h3 className="text-4xl font-serif font-bold mb-6 tracking-tight uppercase">{day.title}</h3>
                 <p className="text-xl text-[#444] leading-relaxed mb-8 font-light">{day.description}</p>
               </div>
               <div className="lg:w-1/2 grid grid-cols-2 gap-6 w-full">
