@@ -25,8 +25,8 @@ function MapRecenter({ coords }) {
 
 export default function InteractiveMap() {
   const [isClient, setIsClient] = useState(false);
-  const expedition = expeditions['en'][0]; // Rugged Mongolia 4x4
-  const points = expedition.waypoints.map(w => w.coords);
+  const expedition = expeditions[0]; // Accessing the first item in the simplified array
+  const points = expedition?.waypoints?.map(w => w.coords) || [];
 
   useEffect(() => {
     setIsClient(true);
@@ -56,7 +56,7 @@ export default function InteractiveMap() {
           opacity={0.8}
         />
 
-        {expedition.waypoints.map((point, idx) => (
+        {expedition?.waypoints?.map((point, idx) => (
           <Marker key={idx} position={point.coords} icon={icon}>
             <Popup className="custom-popup">
               <div className="p-2">
