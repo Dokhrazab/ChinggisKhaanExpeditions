@@ -1,15 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async headers() {
+    const isProduction = process.env.NEXT_PUBLIC_VERCEL_ENV === 'production' || process.env.VERCEL_ENV === 'production';
+    
     return [
       {
         source: '/:path*',
         headers: [
           {
             key: 'X-Robots-Tag',
-            value: process.env.NEXT_PUBLIC_SITE_URL === 'https://chinggiskhaanexpeditions.com' 
-              ? 'index, follow' 
-              : 'noindex, nofollow',
+            value: isProduction ? 'index, follow' : 'noindex, nofollow',
           },
         ],
       },
