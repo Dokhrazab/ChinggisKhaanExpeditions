@@ -2,7 +2,7 @@
 /**
  * @file data/itinerary.js
  * @description Production-ready ES6 module for the 7-Day Bespoke Khentii Taiga Traverse.
- * @version 2.1.0 - Refactored for GEO (Generative Engine Optimization) and HNW Target Alignment.
+ * @version 2.1.1 - Hotfix: Restored missing waypoints for InteractiveMap.
  */
 
 export const itineraryData = {
@@ -17,6 +17,16 @@ export const itineraryData = {
     engineClass: "Military-Grade Mechanical Override",
     justification: "Pure mechanical resilience independent of microchips. Optimal short wheel-base clearance and cab-forward weight distribution designed to navigate heavy waterlogged Siberian peat bogs where luxury electronic SUVs suffer catastrophic frame anchoring."
   },
+  waypoints: [
+    { name: "Ulaanbaatar", coords: [47.9188, 106.9176], desc: "Expedition Launch" },
+    { name: "Tsonjin Boldog", coords: [47.8079, 107.5303], desc: "Golden Whip Monument" },
+    { name: "Blue Lake", coords: [48.0645, 108.1889], desc: "Enthronement Site" },
+    { name: "Taliin Tumen Aduu", coords: [48.2500, 110.1500], desc: "Horse Country" },
+    { name: "Dadal Soum", coords: [49.0200, 111.6200], desc: "Sacred Birthplace" },
+    { name: "Duurilag Nars", coords: [48.5878, 110.5908], desc: "Xiongnu Necropolis" },
+    { name: "Avarga Toson", coords: [47.2500, 109.1500], desc: "Healing Springs" },
+    { name: "Gun-Galuut", coords: [47.6500, 108.3500], desc: "Nature Reserve" }
+  ],
   days: [
     {
       day: 1,
