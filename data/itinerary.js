@@ -2,7 +2,7 @@
 /**
  * @file data/itinerary.js
  * @description Production-ready ES6 module for the 7-Day Bespoke Khentii Taiga Traverse.
- * @version 2.2.0 - Optimized data structure and removed all non-English localization logic.
+ * @version 2.3.0 - Integrated Travel Guides and fixed blog structure.
  */
 
 export const itineraryData = {
@@ -107,5 +107,46 @@ export const dayImages = {
 };
 
 export const sampleBlogs = [
-  { slug: 'rugged-overland-guide', title: 'Navigating the Northern Taiga', category: 'Expertise', img: '/images/khentii-mountain-scenery.png' }
+  { 
+    slug: 'rugged-overland-guide', 
+    title: 'Navigating the Northern Taiga: A Technical Guide', 
+    category: 'Expertise', 
+    img: '/images/khentii-mountain-scenery.png',
+    date: 'May 2026',
+    content: `
+      <p>Overlanding in the Northern Khentii is not about horsepower; it is about mechanical resilience and tactical navigation. This guide breaks down the essential requirements for a successful taiga traverse.</p>
+      <h2>The Mechanical Advantage</h2>
+      <p>We exclusively use the <strong>UAZ Furgon Bukhanka</strong>. Why? Because in the sub-Siberian peat bogs, a microchip is a liability. You need a vehicle that can be fixed with a hammer and a wrench in the middle of a river crossing.</p>
+      <h2>Terrain Awareness</h2>
+      <p>The taiga is a shifting landscape. One hour you are on fast-rolling earthen trails, the next you are navigating waterlogged mud channels. Understanding when to engage low-range and how to read the river benches is the difference between an expedition and a recovery mission.</p>
+    `
+  },
+  { 
+    slug: 'the-sovereign-plateau', 
+    title: 'Kherlen Khuduu Aral: The Bedrock of Empire', 
+    category: 'History', 
+    img: '/images/kherlen-khuduu-aral-assembly-grounds.avif',
+    date: 'June 2026',
+    content: `
+      <p>Kherlen Khuduu Aral is the most historically significant plateau in Central Asia. It is the site where the Great Mongol Empire was proclaimed in 1206.</p>
+      <h2>A Sacred Geography</h2>
+      <p>Our expeditions provide clarity on why this specific location was chosen for the Great Assembly. The confluence of the Kherlen River and the surrounding mountains provided a natural fortress and a logistical hub for the early Mongol state.</p>
+      <h2>Archaeological Footprints</h2>
+      <p>From 13th-century palace foundations to ancient monuments, the plateau is an open-air museum. We guide you through the latest findings that link these ruins to the political vision of the Great Khan.</p>
+    `
+  },
+  { 
+    slug: '4x4-expedition-gear', 
+    title: 'Essential Gear for Remote Safari', 
+    category: 'Equipment', 
+    img: '/images/chinggis-khaan-expedition-signature-hero.avif',
+    date: 'April 2026',
+    content: `
+      <p>Packing for a remote 4x4 expedition requires a balance of weight and utility. In the deep field, every kilogram must earn its place.</p>
+      <h2>The Recovery Kit</h2>
+      <p>Beyond the basics, we carry heavy-duty winches, sand ladders, and high-lift jacks. But the most important piece of gear is the expertise to use them effectively in saturated soil.</p>
+      <h2>Personal Provisions</h2>
+      <p>We provide premium field gear, but we recommend guests bring high-quality technical layers. The temperature in the Khentii can swing 30 degrees Celsius in a single day.</p>
+    `
+  }
 ];

@@ -19,7 +19,7 @@ export default function HomeExplorer({ expeditions, sampleBlogs }) {
           <span className="font-serif font-black tracking-tighter text-xl hidden md:block uppercase">Chinggis Khaan Expeditions</span>
         </div>
         <div className="flex gap-10 items-center font-bold uppercase tracking-[0.2em] text-[10px]">
-          <Link href="/stories" className="hover:text-[#C5A059] transition-colors hidden sm:block">Chronicles</Link>
+          <Link href="/stories" className="hover:text-[#C5A059] transition-colors hidden sm:block">Travel Guide</Link>
           
           <a href="#inquiry" className="bg-[#1A1A1A] text-white px-8 py-3 rounded-full hover:bg-[#C5A059] transition-all shadow-2xl active:scale-95">
             Request Access
@@ -86,10 +86,10 @@ export default function HomeExplorer({ expeditions, sampleBlogs }) {
       <section className="py-40 px-6 max-w-7xl mx-auto text-[#1A1A1A]">
         <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
           <div>
-            <span className="text-[#C5A059] font-black tracking-[0.4em] uppercase text-[10px] mb-6 block">The Chronicles</span>
-            <h2 className="text-6xl font-serif font-bold tracking-tight">Technical Insights.</h2>
+            <span className="text-[#C5A059] font-black tracking-[0.4em] uppercase text-[10px] mb-6 block">Field Intel</span>
+            <h2 className="text-6xl font-serif font-bold tracking-tight uppercase">Travel Guide.</h2>
           </div>
-          <Link href="/stories" className="text-[11px] font-black uppercase tracking-[0.3em] border-b-2 border-[#C5A059] pb-3 hover:text-[#C5A059] transition-all">View Archive</Link>
+          <Link href="/stories" className="text-[11px] font-black uppercase tracking-[0.3em] border-b-2 border-[#C5A059] pb-3 hover:text-[#C5A059] transition-all">View All</Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
