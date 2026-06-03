@@ -1,12 +1,19 @@
-/** @type {import('next').Config} */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    remotePatterns: [
+  async headers() {
+    return [
       {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: process.env.NEXT_PUBLIC_SITE_URL === 'https://chinggiskhaanexpeditions.com' 
+              ? 'index, follow' 
+              : 'noindex, nofollow',
+          },
+        ],
       },
-    ],
+    ];
   },
 };
 
