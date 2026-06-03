@@ -2,12 +2,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { expeditions, dayImages } from '../../../data/itinerary';
+import { itineraryData, dayImages } from '../../../data/itinerary';
 import InquiryForm from '../../../components/InquiryForm';
 
 export async function generateMetadata({ params }) {
   const { id } = params;
-  const expedition = expeditions['en'].find((e) => e.id === id);
+  const expedition = itineraryData.id === id ? itineraryData : null;
 
   if (!expedition) return { title: 'Expedition Not Found' };
 
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
 
 export default function ExpeditionDetail({ params }) {
   const { id } = params;
-  const expedition = expeditions['en'].find((e) => e.id === id);
+  const expedition = itineraryData.id === id ? itineraryData : null;
 
   if (!expedition) {
     notFound();

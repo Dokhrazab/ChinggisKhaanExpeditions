@@ -1,14 +1,13 @@
 // /components/HomeExplorer.js
 'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export default function HomeExplorer({ expeditions, sampleBlogs }) {
-  const [lang, setLang] = useState('en');
-  const currentExpeditions = expeditions[lang];
+  // We only have one expedition now
+  const currentExpeditions = expeditions;
 
   return (
     <>
@@ -22,13 +21,8 @@ export default function HomeExplorer({ expeditions, sampleBlogs }) {
         <div className="flex gap-10 items-center font-bold uppercase tracking-[0.2em] text-[10px]">
           <Link href="/stories" className="hover:text-[#C5A059] transition-colors hidden sm:block">Chronicles</Link>
           
-          <div className="flex items-center bg-black/5 rounded-full p-1 border border-black/5">
-            <button onClick={() => setLang('en')} className={`px-4 py-1.5 rounded-full text-[9px] font-black transition-all ${lang === 'en' ? 'bg-[#1A1A1A] text-white shadow-xl' : 'text-[#666]'}`}>EN</button>
-            <button onClick={() => setLang('ko')} className={`px-4 py-1.5 rounded-full text-[9px] font-black transition-all ${lang === 'ko' ? 'bg-[#1A1A1A] text-white shadow-xl' : 'text-[#666]'}`}>KO</button>
-          </div>
-
           <a href="#inquiry" className="bg-[#1A1A1A] text-white px-8 py-3 rounded-full hover:bg-[#C5A059] transition-all shadow-2xl active:scale-95">
-            {lang === 'en' ? 'Request Access' : '탐험 신청'}
+            Request Access
           </a>
         </div>
       </nav>
@@ -66,7 +60,7 @@ export default function HomeExplorer({ expeditions, sampleBlogs }) {
                 <h3 className="text-5xl md:text-7xl font-serif font-bold mb-8 leading-tight tracking-tighter">{tour.title}</h3>
                 <p className="text-xl text-white/60 mb-12 max-w-xl font-light leading-relaxed italic">"{tour.tagline}"</p>
                 <div className="flex flex-col sm:flex-row gap-6">
-                  <Link href={`/expeditions/${tour.id}`} className="flex-1 py-6 bg-white/10 backdrop-blur-xl border border-white/20 text-white rounded-[24px] text-center text-[11px] font-black uppercase tracking-[0.3em] hover:bg-white hover:text-[#1A1A1A] transition-all">Deep Analysis</Link>
+                  <Link href={`/expeditions/${tour.id}`} className="flex-1 py-6 bg-white/10 backdrop-blur-xl border border-white/20 text-white rounded-[24px] text-center text-[11px] font-black uppercase tracking-[0.3em] hover:bg-white hover:text-[#1A1A1A] transition-all">View Details</Link>
                   <a href="#inquiry" className="flex-1 py-6 bg-[#C5A059] text-white rounded-[24px] text-center text-[11px] font-black uppercase tracking-[0.3em] hover:shadow-[0_15px_30px_rgba(197,160,89,0.4)] transition-all">Submit Application</a>
                 </div>
               </div>
