@@ -2,54 +2,57 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { itineraryData, dayImages } from '../../../data/itinerary';
+import { expeditions, dayImages } from '../../../data/itinerary';
 import InquiryForm from '../../../components/InquiryForm';
 
 export async function generateMetadata({ params }) {
   const { id } = params;
-  const expedition = itineraryData.id === id ? itineraryData : null;
+  const expedition = expeditions.find(e => e.id === id);
 
   if (!expedition) return { title: 'Expedition Not Found' };
 
   return {
     title: `Rugged 4x4 ${expedition.title} Overland Expedition | Mongolia`,
-    description: expedition.description,
+    description: expedition.metaDescription || expedition.description,
     openGraph: {
       title: `Rugged 4x4 ${expedition.title} Overland Expedition`,
-      description: expedition.description,
-      images: [{ url: expedition.heroImage }],
+      description: expedition.metaDescription || expedition.description,
+      images: [{ url: expedition.imagePath || expedition.heroImage }],
     },
   };
 }
 
 export default function ExpeditionDetail({ params }) {
   const { id } = params;
-  const expedition = itineraryData.id === id ? itineraryData : null;
+  const expedition = expeditions.find(e => e.id === id);
 
   if (!expedition) {
     notFound();
   }
 
+  const daysData = expedition.days || expedition.itinerary;
+  const heroImage = expedition.imagePath || expedition.heroImage;
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "TouristTrip",
     "name": `Rugged 4x4 ${expedition.title} Overland Expedition`,
-    "description": expedition.description,
+    "description": expedition.metaDescription || expedition.description,
     "touristType": "Private Remote Wilderness Safari",
     "provider": {
       "@type": "TravelAgency",
       "name": "Chinggis Khaan Expeditions",
       "url": "https://chinggiskhaanexpeditions.com"
     },
-    "itinerary": expedition.days.map((day) => ({
+    "itinerary": daysData.map((day) => ({
       "@type": "City",
-      "name": day.title,
-      "description": day.description
+      "name": day.title || day.vector,
+      "description": day.description || day.ops
     })),
     "offers": {
       "@type": "Offer",
       "priceCurrency": "USD",
-      "price": expedition.price,
+      "price": typeof expedition.price === 'string' ? expedition.price.replace(/[$,]/g, '') : expedition.price,
       "availability": "https://schema.org/InStock",
       "validFrom": "2026-01-01"
     },
@@ -75,12 +78,12 @@ export default function ExpeditionDetail({ params }) {
       </nav>
 
       <header className="relative w-full h-[65vh] flex items-end overflow-hidden pt-20">
-        <Image src={expedition.heroImage} alt={expedition.title} fill priority className="object-cover" />
+        <Image src={heroImage} alt={expedition.title} fill priority className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] to-transparent opacity-80" />
         <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pb-20 text-white text-left">
           <span className="text-[#C5A059] font-bold tracking-[0.4em] uppercase mb-4 block text-xs">Rugged Overland Expedition</span>
           <h1 className="text-5xl md:text-7xl font-serif font-extrabold mb-4 tracking-tighter uppercase">{expedition.title}</h1>
-          <p className="text-xl md:text-2xl text-white/80 max-w-2xl font-light italic">{expedition.tagline}</p>
+          <p className="text-xl md:text-2xl text-white/80 max-w-2xl font-light italic">{expedition.tagline || expedition.region}</p>
         </div>
       </header>
 
@@ -95,31 +98,32 @@ export default function ExpeditionDetail({ params }) {
               <p className="text-2xl font-serif font-bold">{expedition.difficulty}</p>
            </div>
            <div className="space-y-2">
-              <span className="text-[#C5A059] text-[9px] font-black uppercase tracking-widest">Exclusivity</span>
-              <p className="text-2xl font-serif font-bold">{expedition.maxGroupSize}</p>
+              <span className="text-[#C5A059] text-[9px] font-black uppercase tracking-widest">{expedition.maxGroupSize ? 'Exclusivity' : 'Isolation'}</span>
+              <p className="text-2xl font-serif font-bold">{expedition.maxGroupSize || expedition.terrainMetrics?.isolationFactor}</p>
            </div>
         </div>
 
         <div className="space-y-40">
-          {expedition.days.map((day, idx) => (
+          {daysData.map((day, idx) => (
             <div key={idx} className={`flex flex-col ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-20 items-center`}>
               <div className="lg:w-1/2">
                 <div className="flex items-center gap-6 mb-8">
                   <span className="text-8xl font-serif font-black text-[#C5A059]/10">0{day.day}</span>
                   <div className="h-px flex-1 bg-[#C5A059]/20" />
                 </div>
-                <h3 className="text-4xl font-serif font-bold mb-6 tracking-tight uppercase">{day.title}</h3>
-                <p className="text-xl text-[#444] leading-relaxed mb-8 font-light">{day.description}</p>
+                <h3 className="text-4xl font-serif font-bold mb-6 tracking-tight uppercase">{day.title || day.vector}</h3>
+                <p className="text-xl text-[#444] leading-relaxed mb-8 font-light">{day.description || day.ops}</p>
+                {day.terrain && <p className="text-sm font-bold uppercase tracking-widest text-[#C5A059] mb-2">Terrain: {day.terrain}</p>}
               </div>
               <div className="lg:w-1/2 grid grid-cols-2 gap-6 w-full">
                 <div className="col-span-2 relative h-80 rounded-[40px] overflow-hidden shadow-2xl">
-                  <Image src={dayImages[expedition.id]?.[idx]?.[0] || expedition.heroImage} alt={day.title} fill className="object-cover hover:scale-105 transition-transform duration-1000" />
+                  <Image src={dayImages[expedition.id]?.[idx]?.[0] || day.imageSrc || heroImage} alt={day.title || day.vector} fill className="object-cover hover:scale-105 transition-transform duration-1000" />
                 </div>
                 <div className="relative h-48 rounded-[30px] overflow-hidden shadow-xl">
-                  <Image src={dayImages[expedition.id]?.[idx]?.[1] || expedition.heroImage} alt={day.title} fill className="object-cover hover:scale-105 transition-transform duration-1000" />
+                  <Image src={dayImages[expedition.id]?.[idx]?.[1] || day.imageSrc || heroImage} alt={day.title || day.vector} fill className="object-cover hover:scale-105 transition-transform duration-1000" />
                 </div>
                 <div className="relative h-48 rounded-[30px] overflow-hidden shadow-xl">
-                  <Image src={dayImages[expedition.id]?.[idx]?.[2] || expedition.heroImage} alt={day.title} fill className="object-cover hover:scale-105 transition-transform duration-1000" />
+                  <Image src={dayImages[expedition.id]?.[idx]?.[2] || day.imageSrc || heroImage} alt={day.title || day.vector} fill className="object-cover hover:scale-105 transition-transform duration-1000" />
                 </div>
               </div>
             </div>

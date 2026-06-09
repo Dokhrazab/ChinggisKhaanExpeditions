@@ -100,7 +100,9 @@ export const itineraryData = {
   ]
 };
 
-export const expeditions = [itineraryData];
+import { additionalExpeditions } from '../app/data/expeditions';
+
+export const expeditions = [itineraryData, ...additionalExpeditions];
 
 export const dayImages = {
   "khentii-7day-traverse": itineraryData.days.map(day => [day.imageSrc, day.imageSrc, day.imageSrc])

@@ -52,13 +52,13 @@ export default function HomeExplorer({ expeditions, sampleBlogs }) {
 
         <div className="grid grid-cols-1 md:grid-cols-1 max-w-4xl mx-auto">
           {currentExpeditions.map((tour) => (
-            <motion.div key={tour.id} whileHover={{ y: -15 }} className="group relative h-[800px] rounded-[60px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.1)] bg-stone-900">
-              <Image src={tour.heroImage} alt={tour.title} fill className="object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000" />
+            <motion.div key={tour.id} whileHover={{ y: -15 }} className="group relative h-[800px] rounded-[60px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.1)] bg-stone-900 mb-10">
+              <Image src={tour.heroImage || tour.imagePath} alt={tour.title} fill className="object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/20 to-transparent" />
               <div className="absolute bottom-20 left-12 right-12 md:left-24 md:right-24 text-white">
                 <span className="text-[#C5A059] text-[11px] font-black uppercase tracking-[0.5em] mb-6 block">Bespoke Overland Journey</span>
                 <h3 className="text-5xl md:text-7xl font-serif font-bold mb-8 leading-tight tracking-tighter">{tour.title}</h3>
-                <p className="text-xl text-white/60 mb-12 max-w-xl font-light leading-relaxed italic">"{tour.tagline}"</p>
+                <p className="text-xl text-white/60 mb-12 max-w-xl font-light leading-relaxed italic">"{tour.tagline || tour.region}"</p>
                 <div className="flex flex-col sm:flex-row gap-6">
                   <Link href={`/expeditions/${tour.id}`} className="flex-1 py-6 bg-white/10 backdrop-blur-xl border border-white/20 text-white rounded-[24px] text-center text-[11px] font-black uppercase tracking-[0.3em] hover:bg-white hover:text-[#1A1A1A] transition-all">View Details</Link>
                   <a href="#inquiry" className="flex-1 py-6 bg-[#C5A059] text-white rounded-[24px] text-center text-[11px] font-black uppercase tracking-[0.3em] hover:shadow-[0_15px_30px_rgba(197,160,89,0.4)] transition-all">Submit Application</a>
