@@ -1,6 +1,6 @@
 // /app/page.js
 import dynamic from 'next/dynamic';
-import { expeditions, sampleBlogs } from '../data/itinerary';
+import { expeditions, travelGuides } from '../data/itinerary';
 import HomeExplorer from '../components/HomeExplorer';
 import InquiryForm from '../components/InquiryForm';
 
@@ -37,7 +37,7 @@ export default function LandingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      <HomeExplorer expeditions={expeditions} sampleBlogs={sampleBlogs} />
+      <HomeExplorer expeditions={expeditions} travelGuides={travelGuides} />
 
       <section className="py-40 px-6 bg-white">
         <div className="max-w-6xl mx-auto text-center mb-24">

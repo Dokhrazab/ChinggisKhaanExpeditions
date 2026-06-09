@@ -100,15 +100,11 @@ export const itineraryData = {
   ]
 };
 
-import { additionalExpeditions } from '../app/data/expeditions';
+import { additionalExpeditions, additionalTravelGuides } from '../app/data/expeditions';
 
 export const expeditions = [itineraryData, ...additionalExpeditions];
 
-export const dayImages = {
-  "khentii-7day-traverse": itineraryData.days.map(day => [day.imageSrc, day.imageSrc, day.imageSrc])
-};
-
-export const sampleBlogs = [
+export const travelGuides = [
   { 
     slug: 'rugged-overland-guide', 
     title: 'Navigating the Northern Taiga: A Technical Guide', 
@@ -150,5 +146,6 @@ export const sampleBlogs = [
       <h2>Personal Provisions</h2>
       <p>We provide premium field gear, but we recommend guests bring high-quality technical layers. The temperature in the Khentii can swing 30 degrees Celsius in a single day.</p>
     `
-  }
+  },
+  ...additionalTravelGuides
 ];

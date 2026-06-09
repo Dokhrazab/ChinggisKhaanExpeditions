@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-export default function HomeExplorer({ expeditions, sampleBlogs }) {
+export default function HomeExplorer({ expeditions, travelGuides }) {
   // We only have one expedition now
   const currentExpeditions = expeditions;
 
@@ -93,9 +93,9 @@ export default function HomeExplorer({ expeditions, sampleBlogs }) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {sampleBlogs.map((blog) => (
+          {travelGuides.slice(0, 4).map((blog) => (
             <Link key={blog.slug} href={`/stories/${blog.slug}`} className="group relative h-[500px] rounded-[50px] overflow-hidden shadow-2xl">
-              <Image src={blog.img} alt={blog.title} fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
+              <Image src={blog.img || '/images/chinggis-khaan-expedition-signature-hero.avif'} alt={blog.title} fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent opacity-90" />
               <div className="absolute bottom-12 left-12 right-12">
                 <span className="text-[#C5A059] text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">{blog.category}</span>
