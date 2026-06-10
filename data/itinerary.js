@@ -105,7 +105,15 @@ import { additionalExpeditions, additionalTravelGuides } from '../app/data/exped
 export const expeditions = [itineraryData, ...additionalExpeditions];
 
 export const dayImages = {
-  "khentii-7day-traverse": itineraryData.days.map(day => [day.imageSrc, day.imageSrc, day.imageSrc])
+  "khentii-7day-traverse": [
+    ["/images/81.png", itineraryData.days[0].imageSrc, "/images/55.png"], // Day 1
+    [itineraryData.days[1].imageSrc, "/images/39.avif", "/images/48.avif"], // Day 2
+    [itineraryData.days[2].imageSrc, "/images/69.png", "/images/80.avif"], // Day 3
+    ["/images/71.avif", "/images/75.webp", "/images/38.avif"], // Day 4
+    ["/images/90.jpg", "/images/73.jpg", "/images/91.jpg"], // Day 5
+    ["/images/95.jpg", "/images/96.jpg", "/images/97.jpg"], // Day 6
+    ["/images/70.avif", "/images/98.jpg", "/images/67.avif"] // Day 7
+  ]
 };
 
 export const travelGuides = [
