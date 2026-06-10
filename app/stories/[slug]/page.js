@@ -2,10 +2,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { sampleBlogs } from '../../../data/itinerary';
+import { travelGuides } from '../../../data/itinerary';
 
 export async function generateMetadata({ params }) {
-  const post = sampleBlogs.find(b => b.slug === params.slug);
+  const post = travelGuides.find(b => b.slug === params.slug);
   if (!post) return { title: 'Guide Not Found' };
   return {
     title: `${post.title} | CKE Travel Guide`,
@@ -14,7 +14,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default function BlogPost({ params }) {
-  const post = sampleBlogs.find(b => b.slug === params.slug);
+  const post = travelGuides.find(b => b.slug === params.slug);
   if (!post) notFound();
 
   return (

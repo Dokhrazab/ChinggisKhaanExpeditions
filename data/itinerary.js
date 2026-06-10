@@ -104,6 +104,10 @@ import { additionalExpeditions, additionalTravelGuides } from '../app/data/exped
 
 export const expeditions = [itineraryData, ...additionalExpeditions];
 
+export const dayImages = {
+  "khentii-7day-traverse": itineraryData.days.map(day => [day.imageSrc, day.imageSrc, day.imageSrc])
+};
+
 export const travelGuides = [
   { 
     slug: 'rugged-overland-guide', 

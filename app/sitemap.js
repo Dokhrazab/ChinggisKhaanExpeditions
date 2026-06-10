@@ -1,5 +1,5 @@
 // /app/sitemap.js
-import { expeditions, sampleBlogs } from '../data/itinerary';
+import { expeditions, travelGuides } from '../data/itinerary';
 
 export default function sitemap() {
   const baseUrl = 'https://chinggiskhaanexpeditions.com';
@@ -21,7 +21,7 @@ export default function sitemap() {
   }));
 
   // Blog routes
-  const blogRoutes = sampleBlogs.map((blog) => ({
+  const blogRoutes = travelGuides.map((blog) => ({
     url: `${baseUrl}/stories/${blog.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',

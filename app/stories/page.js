@@ -1,7 +1,7 @@
 // /app/stories/page.js
 import Image from 'next/image';
 import Link from 'next/link';
-import { sampleBlogs } from '../../data/itinerary';
+import { travelGuides } from '../../data/itinerary';
 
 export const metadata = {
   title: 'Travel Guide | Historical Stories from Mongolia',
@@ -31,7 +31,7 @@ export default function StoriesPage() {
           </header>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {sampleBlogs.map((post) => (
+            {travelGuides.map((post) => (
               <Link key={post.slug} href={`/stories/${post.slug}`} className="group block">
                 <div className="relative h-[500px] rounded-[48px] overflow-hidden shadow-2xl mb-8 transition-all hover:shadow-[0_20px_50px_rgba(197,160,89,0.2)]">
                   <Image src={post.img} alt={post.title} fill className="object-cover group-hover:scale-110 transition-transform duration-1000" />
