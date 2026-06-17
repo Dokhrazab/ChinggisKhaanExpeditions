@@ -24,12 +24,48 @@ export const additionalExpeditions = [
       [48.9712, 89.9702]
     ],
     itinerary: [
-      { day: 1, title: "The Gateway to the Altai", vector: "Fly UB to Ölgii", ops: "Explore local bazaar and mosque. Check into hotel.", terrain: "Urban / Airport Transfer" },
-      { day: 2, title: "Festival Awakening", vector: "Ölgii to Sagsai Valley", ops: "Opening Ceremony parade, hunter registration, and eagle agility trials.", terrain: "Gravel / Open Steppe" },
-      { day: 3, title: "Nomadic Games", vector: "Sagsai Festival Grounds", ops: "Sagsai Festival Day 2. Fox lure chase, horseback nomadic games (Kyz Kuar, Kukbar), awards.", terrain: "Festival Grounds" },
-      { day: 4, title: "Tsagaan Sayan Immersion", vector: "Drive to Tsengel Sum", ops: "Meet the local Tuvan family from the Tsagaan Sayan tribe. Traditional throat singing (Khoomei) around the hearth.", terrain: "Rugged Mountain Track" },
-      { day: 5, title: "High Mountain Traverse", vector: "Tsengel Exploration", ops: "All-day horseback riding exploration through the pristine valleys of the Altai Mountains with Tuvan horse masters.", terrain: "Alpine / Forested" },
-      { day: 6, title: "Extraction Vector", vector: "Return to Ölgii / Fly to UB", ops: "Return overland to Ölgii. Catch domestic return flight to Ulaanbaatar.", terrain: "Return Piste" }
+      { 
+        day: 1, 
+        title: "The Gateway to the Altai", 
+        vector: "Fly UB to Ölgii", 
+        ops: "Depart Ulaanbaatar via domestic flight, landing in the capital of Bayan-Ölgii. Explore the distinct, Turkish-influenced culture of Ölgii city: climb Nairamdal Hill for a panoramic view and visit the Open-Air Bazaar for authentic Kazakh embroidery and felt boots. Savor traditional beshbarmak for dinner.", 
+        terrain: "Urban / Airport Transfer" 
+      },
+      { 
+        day: 2, 
+        title: "Festival Awakening: Day 1", 
+        vector: "Ölgii to Sagsai Valley", 
+        ops: "Witness the Grand Opening Parade in Sagsai Valley as dozens of eagle hunters (berkutchi) march in on horseback. Watch intense agility competitions where hunters are scored on traditional attire, horse gear, and the flawless recall of their eagles from the mountaintops.", 
+        terrain: "Gravel / Open Steppe" 
+      },
+      { 
+        day: 3, 
+        title: "Nomadic Games: Day 2", 
+        vector: "Sagsai Festival Grounds", 
+        ops: "Spend an exhilarating day at the hunting games. Marvel at the 'Chasing the Fox Skin' test of instinct and witness daring nomadic sports: Kyz Kuar (girl-chasing race) and Kukbar (horseback tug-of-war over a goat skin). Celebrate the crowning of the grand champion.", 
+        terrain: "Festival Grounds" 
+      },
+      { 
+        day: 4, 
+        title: "Deep Journey into Tsengel Sum", 
+        vector: "Drive to Tsengel Sum", 
+        ops: "Traverse rugged tracks into remote Tsengel Sum, bordering Russia and China. Arrive at the encampment of the ancient Tsagaan Sayan Tuvan tribe. Experience legendary hospitality in a traditional felt ger and immediately get hands-on with nomadic life: herding and tending horses.", 
+        terrain: "Rugged Mountain Track" 
+      },
+      { 
+        day: 5, 
+        title: "High Mountain Traverse", 
+        vector: "Tsengel Exploration", 
+        ops: "Dedicate the day to authentic mountain riding on sturdy Mongolian horses. Navigate steep alpine passes, glacial rivers, and high-altitude ridges with your Tuvan hosts. Enjoy a rustic picnic lunch by an alpine stream followed by a farewell feast under the unpolluted night sky.", 
+        terrain: "Alpine / Forested" 
+      },
+      { 
+        day: 6, 
+        title: "Extraction Vector", 
+        vector: "Return to Ölgii / Fly to UB", 
+        ops: "Bid farewell to your hosts and make a swift overland dash back across the valleys to Ölgii. Capture final views of the changing autumn landscapes during the drive before catching your domestic flight back to Ulaanbaatar by day's end.", 
+        terrain: "Return Piste" 
+      }
     ]
   },
   {
