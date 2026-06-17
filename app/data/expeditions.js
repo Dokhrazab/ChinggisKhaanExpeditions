@@ -63,36 +63,6 @@ export const additionalExpeditions = [
     ]
   },
   {
-    id: "khuvsgul-7day-taiga",
-    title: "Northern Sub-Arctic Void: Taiga Bog Recovery & Tsaatan Outposts",
-    region: "Khuvsgul / Northern Taiga",
-    duration: "7 Days",
-    difficulty: "Advanced / Heavy Recovery",
-    price: "$1,765",
-    metaTitle: "7-Day Khuvsgul Taiga Overland: Bog Recovery & Reindeer Herder Logistics",
-    metaDescription: "Deep northern sub-arctic overland track. Master heavy water-logging, bog winching techniques, and logistics in the isolated Tsaatan reindeer-herder border zones.",
-    highlights: [
-      "Heavy bog winching and recovery operations (Self-extraction focused)",
-      "Navigation of sub-arctic permafrost zones and marshlands",
-      "Logistical integration with Tsaatan reindeer herder outposts"
-    ],
-    terrainMetrics: {
-      elevation: "1,600m - 2,100m",
-      vehicleStress: "High (Drive-train moisture / Winch motor thermal load)",
-      isolationFactor: "9/10 (Sub-arctic border zone density)"
-    },
-    imagePath: "/images/expeditions/taiga_1.webp",
-    itinerary: [
-      { day: 1, vector: "Mörön to Lake Khuvsgul Perimeter", terrain: "Larch Forest/Deep Rut", ops: "Winch cable tension check; mud-terrain tyre deployment; forest clearance navigation." },
-      { day: 2, vector: "Khoridol Saridag Foothills", terrain: "Wet Marsh/Permafrost", ops: "Bog-mats deployment; technical recovery of bogged units; permafrost stability assessment." },
-      { day: 3, vector: "The Northern Mud-Piste Axis", terrain: "Deep Mud/Waterlogging", ops: "Sustained high-torque low-range ops; differential lock engagement; bypass navigation." },
-      { day: 4, vector: "Tsaatan Reindeer Node (West Taiga)", terrain: "Dense Larch/Bog", ops: "Off-track navigation to nomadic coordinates; calorie-dense supply delivery; satellite update." },
-      { day: 5, vector: "River Basin Extraction", terrain: "River Rocks/Soft Banks", ops: "Upstream fording; checking axle breathers for water; bank reinforcement for heavy units." },
-      { day: 6, vector: "Southern Sayan Ridge Path", terrain: "Mountain Scree/Root systems", ops: "Clearance management over exposed root structures; torque management on steep forest inclines." },
-      { day: 7, vector: "Return Vector to Mörön Base", terrain: "Gravel Piste", ops: "Gearbox fluid check; suspension cleaning; final mission de-briefing and extraction." }
-    ]
-  },
-  {
     id: "gobi-7day-void",
     title: "Nemegt Basin Extraction: Black Sand & Thermal Void Logistics",
     region: "South Gobi / Nemegt Desert",

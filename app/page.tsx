@@ -10,6 +10,26 @@ const GlobalOverviewMap = dynamic(() => import('../components/maps/GlobalOvervie
   loading: () => <div className="h-[600px] w-full bg-stone-100 animate-pulse rounded-[48px] border border-black/5" />
 });
 
+const KhentiiMap = dynamic(() => import('../components/maps/KhentiiTraverseMap'), { 
+  ssr: false,
+  loading: () => <div className="h-[500px] w-full bg-stone-100 animate-pulse rounded-[48px]" />
+});
+
+const GobiMap = dynamic(() => import('../components/maps/GobiVoidMap'), { 
+  ssr: false,
+  loading: () => <div className="h-[500px] w-full bg-stone-100 animate-pulse rounded-[48px]" />
+});
+
+const AltaiFestivalMap = dynamic(() => import('../components/maps/AltaiFestivalMap'), { 
+  ssr: false,
+  loading: () => <div className="h-[500px] w-full bg-stone-100 animate-pulse rounded-[48px]" />
+});
+
+const AltaiAlpineMap = dynamic(() => import('../components/maps/AltaiAlpineMap'), { 
+  ssr: false,
+  loading: () => <div className="h-[500px] w-full bg-stone-100 animate-pulse rounded-[48px]" />
+});
+
 export default function LandingPage() {
   const structuredData = {
     "@context": "https://schema.org",
@@ -61,6 +81,61 @@ export default function LandingPage() {
 
       {/* Lead Generation Form */}
       <InquiryForm />
+
+      {/* Regional Tactical Intelligence Section */}
+      <section className="py-40 px-6 bg-[#F8F5F0] border-t border-black/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-24 text-center">
+            <span className="text-[#C5A059] font-black tracking-[0.4em] uppercase text-[10px] mb-6 block">Regional Intelligence</span>
+            <h2 className="text-5xl md:text-6xl font-serif font-bold tracking-tight mb-8 uppercase">Tactical Frontier <span className="text-[#C5A059]">Sectors</span></h2>
+            <p className="max-w-2xl mx-auto text-lg text-[#666] font-light leading-relaxed">
+              Explore the specific geographic corridors and operational nodes for each of our primary expedition sectors.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {/* Khentii Map */}
+            <div className="space-y-6">
+              <div className="flex justify-between items-end">
+                <h3 className="text-2xl font-serif font-bold uppercase tracking-tight">Khentii Taiga</h3>
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#C5A059]">Sector 01</span>
+              </div>
+              <KhentiiMap />
+              <p className="text-sm text-[#666] font-light italic">Primary focus on sub-Siberian taiga navigation and sacred topography.</p>
+            </div>
+
+            {/* Gobi Map */}
+            <div className="space-y-6">
+              <div className="flex justify-between items-end">
+                <h3 className="text-2xl font-serif font-bold uppercase tracking-tight">Gobi Desert</h3>
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#C5A059]">Sector 02</span>
+              </div>
+              <GobiMap />
+              <p className="text-sm text-[#666] font-light italic">High-heat logistics and deep sand extraction protocols in the Nemegt Basin.</p>
+            </div>
+
+            {/* Altai Festival Map */}
+            <div className="space-y-6">
+              <div className="flex justify-between items-end">
+                <h3 className="text-2xl font-serif font-bold uppercase tracking-tight">Altai Festival</h3>
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#C5A059]">Sector 03</span>
+              </div>
+              <AltaiFestivalMap />
+              <p className="text-sm text-[#666] font-light italic">Cultural immersion and nomadic games logistics in the Bayan-Ölgii region.</p>
+            </div>
+
+            {/* Altai Alpine Map */}
+            <div className="space-y-6">
+              <div className="flex justify-between items-end">
+                <h3 className="text-2xl font-serif font-bold uppercase tracking-tight">Altai Alpine</h3>
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#C5A059]">Sector 04</span>
+              </div>
+              <AltaiAlpineMap />
+              <p className="text-sm text-[#666] font-light italic">Vertical shale navigation and glacial stream fording in the high Altai.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Official Footer */}
       <footer className="bg-[#1A1A1A] py-32 px-6 text-white text-center border-t border-white/5">
