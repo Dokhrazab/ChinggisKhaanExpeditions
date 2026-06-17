@@ -92,11 +92,11 @@ export default function BaseMap({
         scrollWheelZoom={false}
         className="h-full w-full"
       >
-        {/* Accurate and detailed tile layer */}
+        {/* Reliable tile layer that doesn't require an API key for this use case */}
         <TileLayer
-          attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
-          url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png"
-          className="grayscale contrast-125 opacity-80"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+          url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+          className="grayscale contrast-115 opacity-90"
         />
         
         {/* Province Borders */}
