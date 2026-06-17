@@ -115,12 +115,12 @@ export const dayImages = {
     ["/images/70.avif", "/images/98.jpg", "/images/67.avif"] // Day 7
   ],
   "altai-golden-eagle": [
-    ["/images/expeditions/altai-eagle/day1.jpg", "/images/expeditions/altai-eagle/day1.jpg", "/images/expeditions/altai-eagle/day1.jpg"],
-    ["/images/expeditions/altai-eagle/day2.jpg", "/images/expeditions/altai-eagle/day2.jpg", "/images/expeditions/altai-eagle/day2.jpg"],
-    ["/images/expeditions/altai-eagle/day3.jpg", "/images/expeditions/altai-eagle/day3.jpg", "/images/expeditions/altai-eagle/day3.jpg"],
-    ["/images/expeditions/altai-eagle/day4.jpg", "/images/expeditions/altai-eagle/day4.jpg", "/images/expeditions/altai-eagle/day4.jpg"],
-    ["/images/expeditions/altai-eagle/day5.jpg", "/images/expeditions/altai-eagle/day5.jpg", "/images/expeditions/altai-eagle/day5.jpg"],
-    ["/images/expeditions/altai-eagle/day6.jpg", "/images/expeditions/altai-eagle/day6.jpg", "/images/expeditions/altai-eagle/day6.jpg"]
+    ["/images/expeditions/altai-eagle/day1.jpg", "/images/expeditions/altai-eagle/day1_2.jpg", "/images/expeditions/altai-eagle/day1_3.jpg"],
+    ["/images/expeditions/altai-eagle/day2.jpg", "/images/expeditions/altai-eagle/day2_2.jpg", "/images/expeditions/altai-eagle/day2_3.jpg"],
+    ["/images/expeditions/altai-eagle/day3.jpg", "/images/expeditions/altai-eagle/day3_2.jpg", "/images/expeditions/altai-eagle/day3_3.jpg"],
+    ["/images/expeditions/altai-eagle/day4.jpg", "/images/expeditions/altai-eagle/day4_2.jpg", "/images/expeditions/altai-eagle/day4_3.jpg"],
+    ["/images/expeditions/altai-eagle/day5.jpg", "/images/expeditions/altai-eagle/day5_2.jpg", "/images/expeditions/altai-eagle/day5_3.jpg"],
+    ["/images/expeditions/altai-eagle/day6.jpg", "/images/expeditions/altai-eagle/day6_2.jpg", "/images/expeditions/altai-eagle/day6_3.jpg"]
   ]
 };
 
