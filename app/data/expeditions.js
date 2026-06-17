@@ -9,7 +9,7 @@ export const additionalExpeditions = [
     price: "$2,100",
     metaTitle: "6-Day Altai Golden Eagle Festival: Nomadic Games & Eagle Hunters",
     metaDescription: "6-day immersive cultural expedition into the heart of the Altai. Witness the legendary Golden Eagle Festival, nomadic games, and traditional Tuvan hospitality.",
-    heroImage: "/images/expeditions/altai_eagle_hero.webp",
+    heroImage: "/images/expeditions/altai-eagle/hero.jpg",
     waypoints: [
       { id: "ub", name: "Ulaanbaatar", coords: [47.9188, 106.9176], type: "airport", description: "Expedition Launch" },
       { id: "olgii", name: "Ölgii City", coords: [48.9712, 89.9702], type: "hub", description: "Base Camp & Urban Tour" },
