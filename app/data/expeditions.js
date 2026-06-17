@@ -69,36 +69,6 @@ export const additionalExpeditions = [
     ]
   },
   {
-    id: "altai-7day-alpine",
-    title: "Altai Vertical Axis: Glacial Navigation & Eagle Hunter Tactical Nodes",
-    region: "Bayan-Ölgii / Western Altai",
-    duration: "7 Days",
-    difficulty: "Expert / High-Altitude Nav",
-    price: "$1,940",
-    metaTitle: "Altai 7-Day Overland: Vertical Shale Navigation & Kazakh Eagle Hunters",
-    metaDescription: "7-day high-altitude overland mission through the Altai Mountains. Focus on vertical shale traversal, glacial stream crossings, and strategic Kazakh eagle hunter outposts using custom 4x4 Furgon units.",
-    highlights: [
-      "Vertical navigation of Tavan Bogd shale corridors",
-      "Tactical glacial stream fording (seasonal melt-water logistics)",
-      "Exclusive access to remote Kazakh eagle hunter winter camps"
-    ],
-    terrainMetrics: {
-      elevation: "2,500m - 3,400m",
-      vehicleStress: "Extreme (Axle articulation / Vertical torque load)",
-      isolationFactor: "10/10 (Zero cellular footprint / Satellite telemetry only)"
-    },
-    imagePath: "/images/expeditions/altai_1.webp",
-    itinerary: [
-      { day: 1, vector: "Ölgii Base to Khoton Lake Entrance", terrain: "Gravel/Step-up", ops: "Load-out verification; satellite comms sync; initial tyre pressure adjustment for mixed gravel." },
-      { day: 2, vector: "Lake Perimeter to Alpine Base", terrain: "Boulders/Glacial Silt", ops: "Low-range 4x4 engagement; navigation of active silt basins; setup of high-altitude field array." },
-      { day: 3, vector: "Glacier Ridge Traversal", terrain: "Vertical Shale/Jagged Rock", ops: "Spotter-assisted navigation of shale slopes; testing of suspension rebound on off-camber tracks." },
-      { day: 4, vector: "Eagle Hunter Tactical Node 1", terrain: "High Plateau/Open Tundra", ops: "Rendezvous with Kazakh nomadic units; logistics exchange; internal fuel-cell monitoring." },
-      { day: 5, vector: "Stream Crossings to North Pass", terrain: "Deep Water/Mud Banks", ops: "Snorkel-dependent fording; lead-vehicle winch readiness; checking for chassis-water ingress." },
-      { day: 6, vector: "The Descent to White River Valley", terrain: "Steep Switchbacks/Loose Rock", ops: "Heavy engine braking; descent control; monitoring brake rotor thermal signatures." },
-      { day: 7, vector: "Final Vector to Ölgii Extraction", terrain: "Washboard Piste", ops: "Full vehicle integrity check; post-mission data logging; extraction to air terminal." }
-    ]
-  },
-  {
     id: "gobi-7day-void",
     title: "Nemegt Basin Extraction: Black Sand & Thermal Void Logistics",
     region: "South Gobi / Nemegt Desert",

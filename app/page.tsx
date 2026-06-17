@@ -25,11 +25,6 @@ const AltaiFestivalMap = dynamic(() => import('../components/maps/AltaiFestivalM
   loading: () => <div className="h-[500px] w-full bg-stone-100 animate-pulse rounded-[48px]" />
 });
 
-const AltaiAlpineMap = dynamic(() => import('../components/maps/AltaiAlpineMap'), { 
-  ssr: false,
-  loading: () => <div className="h-[500px] w-full bg-stone-100 animate-pulse rounded-[48px]" />
-});
-
 export default function LandingPage() {
   const structuredData = {
     "@context": "https://schema.org",
@@ -93,7 +88,7 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {/* Khentii Map */}
             <div className="space-y-6">
               <div className="flex justify-between items-end">
@@ -122,16 +117,6 @@ export default function LandingPage() {
               </div>
               <AltaiFestivalMap />
               <p className="text-sm text-[#666] font-light italic">Cultural immersion and nomadic games logistics in the Bayan-Ölgii region.</p>
-            </div>
-
-            {/* Altai Alpine Map */}
-            <div className="space-y-6">
-              <div className="flex justify-between items-end">
-                <h3 className="text-2xl font-serif font-bold uppercase tracking-tight">Altai Alpine</h3>
-                <span className="text-[10px] font-black uppercase tracking-widest text-[#C5A059]">Sector 04</span>
-              </div>
-              <AltaiAlpineMap />
-              <p className="text-sm text-[#666] font-light italic">Vertical shale navigation and glacial stream fording in the high Altai.</p>
             </div>
           </div>
         </div>

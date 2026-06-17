@@ -7,14 +7,12 @@ import { expeditions, dayImages } from '../../../data/itinerary';
 import InquiryForm from '../../../components/InquiryForm';
 
 const AltaiMap = dynamic(() => import('../../../components/maps/AltaiFestivalMap'), { ssr: false });
-const AltaiAlpineMap = dynamic(() => import('../../../components/maps/AltaiAlpineMap'), { ssr: false });
 const KhentiiMap = dynamic(() => import('../../../components/maps/KhentiiTraverseMap'), { ssr: false });
 const GobiMap = dynamic(() => import('../../../components/maps/GobiVoidMap'), { ssr: false });
 
 const MapSelector = ({ id }) => {
   switch (id) {
     case 'altai-golden-eagle': return <AltaiMap />;
-    case 'altai-7day-alpine': return <AltaiAlpineMap />;
     case 'khentii-7day-traverse': return <KhentiiMap />;
     case 'gobi-7day-void': return <GobiMap />;
     default: return <KhentiiMap />; // Fallback
