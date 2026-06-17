@@ -1,9 +1,23 @@
 // /app/expeditions/[id]/page.js
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { expeditions, dayImages } from '../../../data/itinerary';
 import InquiryForm from '../../../components/InquiryForm';
+
+const AltaiMap = dynamic(() => import('../../../components/maps/AltaiFestivalMap'), { ssr: false });
+const KhentiiMap = dynamic(() => import('../../../components/maps/KhentiiTraverseMap'), { ssr: false });
+const GobiMap = dynamic(() => import('../../../components/maps/GobiVoidMap'), { ssr: false });
+
+const MapSelector = ({ id }) => {
+  switch (id) {
+    case 'altai-golden-eagle': return <AltaiMap />;
+    case 'khentii-7day-traverse': return <KhentiiMap />;
+    case 'gobi-7day-void': return <GobiMap />;
+    default: return <KhentiiMap />; // Fallback
+  }
+};
 
 export async function generateMetadata({ params }) {
   const { id } = params;
@@ -101,6 +115,14 @@ export default function ExpeditionDetail({ params }) {
               <span className="text-[#C5A059] text-[9px] font-black uppercase tracking-widest">{expedition.maxGroupSize ? 'Exclusivity' : 'Isolation'}</span>
               <p className="text-2xl font-serif font-bold">{expedition.maxGroupSize || expedition.terrainMetrics?.isolationFactor}</p>
            </div>
+        </div>
+
+        <div className="mb-32">
+          <div className="mb-12">
+            <span className="text-[#C5A059] text-[9px] font-black uppercase tracking-widest mb-2 block">Tactical Vector Map</span>
+            <h2 className="text-4xl font-serif font-bold uppercase tracking-tight">Projected Route</h2>
+          </div>
+          <MapSelector id={expedition.id} />
         </div>
 
         <div className="space-y-40">

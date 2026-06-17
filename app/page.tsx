@@ -5,7 +5,7 @@ import HomeExplorer from '../components/HomeExplorer';
 import InquiryForm from '../components/InquiryForm';
 import { expeditions, travelGuides } from '../data/itinerary';
 
-const GlobalMap = dynamic(() => import('../components/maps/GlobalMap'), { 
+const GlobalOverviewMap = dynamic(() => import('../components/maps/GlobalOverviewMap'), { 
   ssr: false,
   loading: () => <div className="h-[600px] w-full bg-stone-100 animate-pulse rounded-[48px] border border-black/5" />
 });
@@ -55,7 +55,7 @@ export default function LandingPage() {
         </div>
         
         <div className="max-w-7xl mx-auto">
-          <GlobalMap />
+          <GlobalOverviewMap />
         </div>
       </section>
 

@@ -1,5 +1,38 @@
 export const additionalExpeditions = [
   {
+    id: "altai-golden-eagle",
+    title: "Altai Golden Eagle Festival",
+    region: "Bayan-Ölgii / Sagsai",
+    slug: "altai-golden-eagle",
+    duration: "6 Days",
+    difficulty: "Cultural / 4x4 Overland",
+    price: "$2,100",
+    metaTitle: "6-Day Altai Golden Eagle Festival: Nomadic Games & Eagle Hunters",
+    metaDescription: "6-day immersive cultural expedition into the heart of the Altai. Witness the legendary Golden Eagle Festival, nomadic games, and traditional Tuvan hospitality.",
+    heroImage: "/images/expeditions/altai_eagle_hero.webp",
+    waypoints: [
+      { id: "ub", name: "Ulaanbaatar", coords: [47.9188, 106.9176], type: "airport", description: "Expedition Launch" },
+      { id: "olgii", name: "Ölgii City", coords: [48.9712, 89.9702], type: "hub", description: "Base Camp & Urban Tour" },
+      { id: "sagsai", name: "Sagsai Sum", coords: [48.7833, 89.6500], type: "festival", description: "Golden Eagle Festival Grounds" },
+      { id: "tsengel", name: "Tsengel Sum", coords: [48.9333, 88.9333], type: "tuvan", description: "Tsagaan Sayan Tribe Encampment" }
+    ],
+    flightPath: [[47.9188, 106.9176], [48.9712, 89.9702]],
+    overlandPath: [
+      [48.9712, 89.9702],
+      [48.7833, 89.6500],
+      [48.9333, 88.9333],
+      [48.9712, 89.9702]
+    ],
+    itinerary: [
+      { day: 1, title: "The Gateway to the Altai", vector: "Fly UB to Ölgii", ops: "Explore local bazaar and mosque. Check into hotel.", terrain: "Urban / Airport Transfer" },
+      { day: 2, title: "Festival Awakening", vector: "Ölgii to Sagsai Valley", ops: "Opening Ceremony parade, hunter registration, and eagle agility trials.", terrain: "Gravel / Open Steppe" },
+      { day: 3, title: "Nomadic Games", vector: "Sagsai Festival Grounds", ops: "Sagsai Festival Day 2. Fox lure chase, horseback nomadic games (Kyz Kuar, Kukbar), awards.", terrain: "Festival Grounds" },
+      { day: 4, title: "Tsagaan Sayan Immersion", vector: "Drive to Tsengel Sum", ops: "Meet the local Tuvan family from the Tsagaan Sayan tribe. Traditional throat singing (Khoomei) around the hearth.", terrain: "Rugged Mountain Track" },
+      { day: 5, title: "High Mountain Traverse", vector: "Tsengel Exploration", ops: "All-day horseback riding exploration through the pristine valleys of the Altai Mountains with Tuvan horse masters.", terrain: "Alpine / Forested" },
+      { day: 6, title: "Extraction Vector", vector: "Return to Ölgii / Fly to UB", ops: "Return overland to Ölgii. Catch domestic return flight to Ulaanbaatar.", terrain: "Return Piste" }
+    ]
+  },
+  {
     id: "altai-7day-alpine",
     title: "Altai Vertical Axis: Glacial Navigation & Eagle Hunter Tactical Nodes",
     region: "Bayan-Ölgii / Western Altai",
