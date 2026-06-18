@@ -88,7 +88,7 @@ export const additionalExpeditions = [
       vehicleStress: "Moderate (Long drive durations / Washboard piste)",
       isolationFactor: "7/10 (Established camps / Historic crossroads)"
     },
-    imagePath: "/images/expeditions/altai_1.webp",
+    imagePath: "/images/expeditions/gobi-loop/hero.jpg",
     overlandPath: [
       [47.9188, 106.9176],
       [46.2480, 105.9820],

@@ -123,7 +123,7 @@ export const dayImages = {
     ["/images/expeditions/altai-eagle/day6.jpg", "/images/expeditions/altai-eagle/day6_2.jpg", "/images/expeditions/altai-eagle/day6_3.jpg"]
   ],
   "gobi-loop": [
-    ["/images/33.webp", "/images/11.webp", "/images/17.webp"],
+    ["/images/expeditions/gobi-loop/day1_1.jpg", "/images/expeditions/gobi-loop/day1_2.jpg", "/images/expeditions/gobi-loop/day1_3.jpg"],
     ["/images/18.webp", "/images/22.webp", "/images/24.webp"],
     ["/images/28.webp", "/images/30.webp", "/images/32.webp"],
     ["/images/35.webp", "/images/36.webp", "/images/37.webp"],
