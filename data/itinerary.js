@@ -100,7 +100,7 @@ export const itineraryData = {
   ]
 };
 
-import { additionalExpeditions, additionalTravelGuides } from '../app/data/expeditions';
+import { additionalExpeditions } from '../app/data/expeditions';
 
 export const expeditions = [itineraryData, ...additionalExpeditions];
 
@@ -138,16 +138,75 @@ export const dayImages = {
 export const travelGuides = [
   { 
     slug: 'rugged-overland-guide', 
-    title: 'Navigating the Northern Taiga: A Technical Guide', 
+    title: 'How to Tour Mongolia: The Ultimate Practical Guide to Remote Overlanding', 
     category: 'Expertise', 
     img: '/images/khentii-mountain-scenery.png',
     date: 'May 2026',
     content: `
-      <p>Overlanding in the Northern Khentii is not about horsepower; it is about mechanical resilience and tactical navigation. This guide breaks down the essential requirements for a successful taiga traverse.</p>
-      <h2>The Mechanical Advantage</h2>
-      <p>We exclusively use the <strong>UAZ Furgon Bukhanka</strong>. Why? Because in the sub-Siberian peat bogs, a microchip is a liability. You need a vehicle that can be fixed with a hammer and a wrench in the middle of a river crossing.</p>
-      <h2>Terrain Awareness</h2>
-      <p>The taiga is a shifting landscape. One hour you are on fast-rolling earthen trails, the next you are navigating waterlogged mud channels. Understanding when to engage low-range and how to read the river benches is the difference between an expedition and a recovery mission.</p>
+      <p>Planning a journey into the vast Mongolian wilderness can be incredibly daunting. With over 1.6 million square kilometers of terrain and a road network that is less than 5% paved, it is a destination that demands precise planning, robust logistics, and an understanding of local regulations.</p>
+      
+      <p>Whether you are planning to charter an elite private expedition or navigate the backcountry independently, this comprehensive guide covers the critical legal, mechanical, and cultural requirements you must know before arriving in Ulaanbaatar.</p>
+      
+      <h2>1. Visa Requirements & Mandatory Immigration Registration</h2>
+      <p>Entry regulations depend heavily on your nationality, but the administrative steps upon arrival apply to everyone:</p>
+      <ul>
+        <li><strong>Visa-Free Entry:</strong> Citizens of over 30 countries (including the US, Canada, UK, and Australia) can enter Mongolia visa-free for tourism purposes for stays ranging from 30 to 90 days. Always ensure your passport is valid for at least six months beyond your departure date.</li>
+        <li><strong>The 48-Hour Registration Rule:</strong> This is where many independent travelers get caught. All foreign nationals must be formally registered with the Immigration Agency of Mongolia within 48 hours of arrival. If you book an expedition with us, our concierge team handles this digitally on your behalf. If traveling independently, your hotel or housing provider must submit this via the official E-immigration mobile application to avoid severe exit fines.</li>
+        <li><strong>Border Zone Permits:</strong> If your itinerary targets remote areas within 100km of the Russian or Chinese borders (such as the deep northern Taiga or parts of the far Altai), standard tourist access is restricted. You must secure a special permit from the State Frontier Guard Authority prior to departure.</li>
+      </ul>
+      
+      <h2>2. Vehicle Selection & The Realities of the Backcountry Piste</h2>
+      <p>Once you leave the gridlock of Ulaanbaatar, infrastructure drops off completely. Reaching destinations like Dadal Soum or the deep Gobi requires a platform built for technical overland transit.</p>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Vehicle Class</th>
+            <th>Pros</th>
+            <th>Cons</th>
+            <th>Best Suited For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Modern Luxury SUV</strong></td>
+            <td>High asphalt comfort, advanced climate control</td>
+            <td>Complex electronics fail in deep river bogs; fragile plastic trim</td>
+            <td>Short highway trips (Terelj National Park)</td>
+          </tr>
+          <tr>
+            <td><strong>UAZ Furgon (Bukhanka)</strong></td>
+            <td>100% mechanical resilience, heavy cab-forward weight, easy field repairs</td>
+            <td>No luxury amenities, rugged analog ride</td>
+            <td>Deep Taiga peat bogs, extreme mud, remote northern rivers</td>
+          </tr>
+          <tr>
+            <td><strong>Modified Land Cruiser</strong></td>
+            <td>Excellent clearance, reliable 4x4 lockouts</td>
+            <td>High fuel consumption, parts hard to find in remote soums</td>
+            <td>Gobi Desert tracks, gravel washboards</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>3. Communication, Power, and Cash Flow</h2>
+      <p>Do not expect your international data plan to keep you connected when tracking across the steppe. Plan your utility layout using these parameters:</p>
+      <ul>
+        <li><strong>Connectivity:</strong> Pick up a local physical or eSIM (Mobicom or Unitel are recommended) at the airport in Ulaanbaatar. You will find reliable 4G in town centers (Soums), but anticipate total digital blackouts when traversing the open country. For emergency backup, our expedition convoys carry standalone satellite communication arrays.</li>
+        <li><strong>Currency Logistics:</strong> The official currency is the Mongolian Tögrög (MNT). While high-end establishments in the capital accept credit cards, cash is absolute king everywhere else. Exchange your currency at the Naiman Sharga exchange market in downtown Ulaanbaatar for the most accurate rates, and ensure you carry plenty of small-denomination bills for rural fuel stops and nomad encounters.</li>
+        <li><strong>Power Infrastructure:</strong> Electricity is non-existent during deep wilderness camping. Bring high-capacity power banks capable of handling European Type C/E plug configurations for when you hit ger camps.</li>
+      </ul>
+
+      <h2>4. Cultural Etiquette: Navigating the Nomadic Ger</h2>
+      <p>Mongolian hospitality is legendary, but it is deeply tied to ancestral customs. When visiting a local herder's family, practicing respect preserves safety and goodwill:</p>
+      <ul>
+        <li><strong>The Threshold:</strong> Never step on the wooden threshold of a ger's doorway—this is traditionally viewed as stepping on the neck of the household's master. Step completely over it with your right foot first.</li>
+        <li><strong>Receiving Offerings:</strong> When handed a bowl of dairy (like Airag) or a plate of food, always accept it with your right hand, using your left hand to lightly support your right elbow as a sign of deep respect.</li>
+        <li><strong>Direction of Travel:</strong> Once inside a traditional ger, always walk around the perimeter in a clockwise direction. Avoid pointing your feet directly at the central structural pillars or the family altar.</li>
+      </ul>
+
+      <h2>The Ultimate Takeaway</h2>
+      <p>Touring Mongolia is an unparalleled adventure, but it punishes poor preparation. By ensuring your legal registrations are filed, selecting an analog-capable vehicle platform, and treating the local nomadic culture with respect, you transform a highly unpredictable environment into the trip of a lifetime.</p>
     `
   },
   { 
@@ -178,5 +237,4 @@ export const travelGuides = [
       <p>We provide premium field gear, but we recommend guests bring high-quality technical layers. The temperature in the Khentii can swing 30 degrees Celsius in a single day.</p>
     `
   },
-  ...additionalTravelGuides
 ];
