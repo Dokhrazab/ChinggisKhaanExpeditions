@@ -69,33 +69,110 @@ export const additionalExpeditions = [
     ]
   },
   {
-    id: "gobi-7day-void",
-    title: "Nemegt Basin Extraction: Black Sand & Thermal Void Logistics",
-    region: "South Gobi / Nemegt Desert",
-    duration: "7 Days",
-    difficulty: "Advanced / Sand & Thermal",
-    price: "$1,615",
-    metaTitle: "7-Day South Gobi Overland: Nemegt Basin & Black Sand Dune Navigation",
-    metaDescription: "Brutal southern Gobi overland mission. Focus on shifting black sand dunes, tactical canyon extraction through the Nemegt Basin, and high-heat logistics management.",
+    id: "gobi-loop",
+    title: "8-Day Classic Gobi Loop",
+    region: "South Gobi & Karakorum",
+    slug: "gobi-loop",
+    duration: "8 Days / 7 Nights",
+    difficulty: "Standard Adventure",
+    price: "$1,700",
+    metaTitle: "8-Day Classic Gobi Loop: Ulaanbaatar to Karakorum Overland",
+    metaDescription: "Explore the vast Middle and South Gobi. Wander the granite rock formations of Baga Gazriin Chuluu, the cliffs of Tsagaan Suvarga, Vulture Valley, Singing Dunes, Ongi Oasis, and Karakorum.",
     highlights: [
-      "High-speed navigation of the Khermen Tsav canyon systems",
-      "Deep sand extraction in the shifting black dunes of the Nemegt",
-      "Strict dry-tracking logistics (Water/Fuel payload optimization)"
+      "Scale the 300-meter-high Singing Dunes (Khongoryn Els)",
+      "Explore the historic Orkhon Valley and ancient capital Karakorum",
+      "Venture into the frozen canyons of Vulture Valley (Yoliin Am)"
     ],
     terrainMetrics: {
-      elevation: "800m - 1,400m",
-      vehicleStress: "Moderate-High (Thermal loading / Filtration clogging)",
-      isolationFactor: "10/10 (Dead zone navigation / Fossil field isolation)"
+      elevation: "1,000m - 1,700m",
+      vehicleStress: "Moderate (Long drive durations / Washboard piste)",
+      isolationFactor: "7/10 (Established camps / Historic crossroads)"
     },
-    imagePath: "/images/expeditions/gobi_1.webp",
+    imagePath: "/images/expeditions/altai_1.webp",
+    overlandPath: [
+      [47.9188, 106.9176],
+      [46.2480, 105.9820],
+      [43.8611, 108.3361],
+      [43.4931, 104.0838],
+      [43.5000, 103.1667],
+      [46.6573, 103.1756],
+      [47.2103, 102.8478],
+      [47.9188, 106.9176]
+    ],
+    waypoints: [
+      { id: "ub", name: "Ulaanbaatar", coords: [47.9188, 106.9176], type: "airport", description: "Expedition Launch" },
+      { id: "baga-gazriin", name: "Baga Gazriin Chuluu", coords: [46.2480, 105.9820], type: "camp", description: "Granite Rock Formations" },
+      { id: "tsagaan-suvarga", name: "Tsagaan Suvarga", coords: [43.8611, 108.3361], type: "cliff", description: "White Stupa Cliffs" },
+      { id: "yoliin-am", name: "Yoliin Am", coords: [43.4931, 104.0838], type: "canyon", description: "Vulture Valley Ice Fields" },
+      { id: "khongoryn-els", name: "Khongoryn Els", coords: [43.5000, 103.1667], type: "dunes", description: "Singing Sand Dunes" },
+      { id: "ongi-monastery", name: "Ongi Monastery", coords: [46.6573, 103.1756], type: "monastery", description: "Historic Oasis Crossroads" },
+      { id: "karakorum", name: "Karakorum", coords: [47.2103, 102.8478], type: "ancient-capital", description: "13th Century Capital" }
+    ],
     itinerary: [
-      { day: 1, vector: "Dalanzadgad to Gurvan Saikhan Range", terrain: "Rocky Desert/Dry Wash", ops: "Tyre pressure reduction; air filter pre-cleaner check; water supply hardening." },
-      { day: 2, vector: "Khongoryn Els Dune Perimeter", terrain: "Deep Sand/Silt", ops: "Sand-track readiness; momentum-based dune climbing; monitoring engine coolant temps." },
-      { day: 3, vector: "Nemegt Basin Entry", terrain: "Corrugated Piste/Dry Canyons", ops: "Suspension damping adjustment; navigation of narrow canyon pinch-points; fossil bed protection." },
-      { day: 4, vector: "The Void: Central Nemegt Sector", terrain: "Black Sand/Void Space", ops: "Satellite-only navigation; fuel consumption monitoring; deployment of heat-reflective field arrays." },
-      { day: 5, vector: "Khermen Tsav Red Cliffs Extraction", terrain: "Soft Clay/Sandstone", ops: "Low-pressure sand ops; tactical navigation of erosion channels; high-temp tyre monitoring." },
-      { day: 6, vector: "Naran Daats Oasis Recon", terrain: "Arid Scrub/Alkali Flats", ops: "Alkali dust mitigation; solar-array battery charging; vehicle dust-sealing verification." },
-      { day: 7, vector: "Extraction Vector to Dalanzadgad", terrain: "High-speed Washboard", ops: "Shock absorber thermal check; full chassis nut-and-bolt inspection; payload reconciliation." }
+      {
+        day: 1,
+        title: "Baga Gazriin Chuluu (Granite Rock Formations)",
+        vector: "Ulaanbaatar ➔ Baga Gazriin Chuluu",
+        terrain: "Asphalt highway transitioning to rocky dirt tracks.",
+        ops: "Drive south from Ulaanbaatar into the granite rock formations of the Middle Gobi. Explore the ruins of an ancient monastery hidden in the rock clefts.",
+        accommodation: "Standard Ger Camp (Shared facilities)"
+      },
+      {
+        day: 2,
+        title: "Tsagaan Suvarga (White Stupa)",
+        vector: "Baga Gazriin Chuluu ➔ Tsagaan Suvarga",
+        terrain: "Undulating dirt piste across arid steppe.",
+        ops: "Travel further south to the massive limestone structures of Tsagaan Suvarga, ancient sea beds that look like a multi-colored white stupa wall. Perfect for sunset photography.",
+        accommodation: "Standard Ger Camp / Gobi Suvarga area"
+      },
+      {
+        day: 3,
+        title: "Yoliin Am (Vulture Valley / Gurvan Saikhan NP)",
+        vector: "Tsagaan Suvarga ➔ Yoliin Am",
+        terrain: "Gravel tracks leading into deep mountain canyons.",
+        ops: "Enter the deep South Gobi. Hike deep into the sheer rock canyons of Yoliin Am where massive ice fields survive deep into the summer heat. Keep watch for Argali wild sheep.",
+        accommodation: "Established Standard Ger Camp (e.g., Gobi Mirage / Gobi Nomad region)"
+      },
+      {
+        day: 4,
+        title: "Khongoryn Els (The Singing Dunes - Arrival)",
+        vector: "Yoliin Am ➔ Khongoryn Els",
+        terrain: "Soft sand channels, desert scrub, and dry washes.",
+        ops: "Track west along the Altai mountain foothills to reach the massive 300-meter-high sand dunes. Settle into camp running parallel to the green Khongoryn Gol riverbed.",
+        accommodation: "Standard Desert Ger Camp"
+      },
+      {
+        day: 5,
+        title: "Conquering the Singing Dunes",
+        vector: "Khongoryn Els Exploration",
+        terrain: "Deep dune sand and desert floor.",
+        ops: "Spend the day exploring the dunes, camel riding along the base, and timing the steep climb to the ridge perfectly for a panoramic Gobi sunset as the sands \"sing.\"",
+        accommodation: "Standard Desert Ger Camp"
+      },
+      {
+        day: 6,
+        title: "Ongi Monastery (The Oasis Crossroads)",
+        vector: "Khongoryn Els ➔ Ongi River",
+        terrain: "Vast dry gravel plains and riverbed crossings.",
+        ops: "Break up the long drive north by traveling to the ruins of Ongi Monastery along the banks of the Ongi River. A historic gateway connecting the desert to the central steppes.",
+        accommodation: "Standard Riverside Ger Camp"
+      },
+      {
+        day: 7,
+        title: "Karakorum & Erdene Zuu (The Ancient Capital)",
+        vector: "Ongi Oasis ➔ Orkhon Valley ➔ Karakorum",
+        terrain: "Earthen tracks transitioning into central Mongolian grass trails.",
+        ops: "Drive into the Orkhon Valley to explore Karakorum, the 13th-century capital of the Mongol Empire. Tour the massive walls and active temples of Erdene Zuu Monastery.",
+        accommodation: "Central Mongolia Ger Camp"
+      },
+      {
+        day: 8,
+        title: "Return to Ulaanbaatar",
+        vector: "Karakorum ➔ Ulaanbaatar",
+        terrain: "Smooth paved highway.",
+        ops: "Complete the loop by driving back to the capital city. Evening drop-off at your accommodation/airport.",
+        accommodation: "Drop-off at Ulaanbaatar accommodation"
+      }
     ]
   }
 ];

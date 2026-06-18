@@ -14,7 +14,7 @@ const MapSelector = ({ id }) => {
   switch (id) {
     case 'altai-golden-eagle': return <AltaiMap />;
     case 'khentii-7day-traverse': return <KhentiiMap />;
-    case 'gobi-7day-void': return <GobiMap />;
+    case 'gobi-loop': return <GobiMap />;
     default: return <KhentiiMap />; // Fallback
   }
 };

@@ -121,6 +121,16 @@ export const dayImages = {
     ["/images/expeditions/altai-eagle/day4.jpg", "/images/expeditions/altai-eagle/day4_2.jpg", "/images/expeditions/altai-eagle/day4_3.jpg"],
     ["/images/expeditions/altai-eagle/day5.jpg", "/images/expeditions/altai-eagle/day5_2.jpg", "/images/expeditions/altai-eagle/day5_3.jpg"],
     ["/images/expeditions/altai-eagle/day6.jpg", "/images/expeditions/altai-eagle/day6_2.jpg", "/images/expeditions/altai-eagle/day6_3.jpg"]
+  ],
+  "gobi-loop": [
+    ["/images/33.webp", "/images/11.webp", "/images/17.webp"],
+    ["/images/18.webp", "/images/22.webp", "/images/24.webp"],
+    ["/images/28.webp", "/images/30.webp", "/images/32.webp"],
+    ["/images/35.webp", "/images/36.webp", "/images/37.webp"],
+    ["/images/2.webp", "/images/3.webp", "/images/9.webp"],
+    ["/images/73.jpg", "/images/75.webp", "/images/81.png"],
+    ["/images/90.jpg", "/images/91.jpg", "/images/95.jpg"],
+    ["/images/96.jpg", "/images/97.jpg", "/images/98.jpg"]
   ]
 };
 
