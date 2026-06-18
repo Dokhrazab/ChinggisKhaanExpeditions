@@ -124,13 +124,14 @@ export const dayImages = {
   ],
   "gobi-loop": [
     ["/images/expeditions/gobi-loop/day1_1.jpg", "/images/expeditions/gobi-loop/day1_2.jpg", "/images/expeditions/gobi-loop/day1_3.jpg"],
-    ["/images/18.webp", "/images/22.webp", "/images/24.webp"],
-    ["/images/28.webp", "/images/30.webp", "/images/32.webp"],
-    ["/images/35.webp", "/images/36.webp", "/images/37.webp"],
-    ["/images/2.webp", "/images/3.webp", "/images/9.webp"],
-    ["/images/73.jpg", "/images/75.webp", "/images/81.png"],
-    ["/images/90.jpg", "/images/91.jpg", "/images/95.jpg"],
-    ["/images/96.jpg", "/images/97.jpg", "/images/98.jpg"]
+    ["/images/expeditions/gobi-loop/image128.jpg", "/images/expeditions/gobi-loop/image126.jpg", "/images/expeditions/gobi-loop/image127.jpg"],
+    ["/images/expeditions/gobi-loop/image129.jpg", "/images/expeditions/gobi-loop/image130.jpg", "/images/expeditions/gobi-loop/image131.jpg"],
+    ["/images/expeditions/gobi-loop/image134.jpg", "/images/expeditions/gobi-loop/image133.jpg", "/images/expeditions/gobi-loop/image132.jpg"],
+    ["/images/expeditions/gobi-loop/image135.jpg", "/images/expeditions/gobi-loop/image136.jpg", "/images/expeditions/gobi-loop/image137.jpg"],
+    ["/images/expeditions/gobi-loop/image140.jpg", "/images/expeditions/gobi-loop/image138.jpg", "/images/expeditions/gobi-loop/image139.jpg"],
+    ["/images/expeditions/gobi-loop/image142.jpg", "/images/expeditions/gobi-loop/image143.jpg", "/images/expeditions/gobi-loop/image141.jpg"],
+    ["/images/76.avif", "/images/expeditions/gobi-loop/image144.jpg", "/images/expeditions/gobi-loop/image145.jpg"],
+  
   ]
 };
 
